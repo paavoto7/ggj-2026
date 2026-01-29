@@ -14,3 +14,25 @@ export_credentials.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# VS code
+.vscode*
+
+# IntelliJ / Rider
+/.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp / cache
+Temp/
+Library/
+Logs/
+
+# Raw assets
+Raw/
+RAW_ASSETS/
+*.psd
+*.blend
+*.aep
