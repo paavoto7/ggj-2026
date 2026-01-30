@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://dte0r1vuepygt"]
+
+[ext_resource type="Texture2D" uid="uid://bji2ic2dm377d" path="res://Assets/Images/Enemy/ghost_spritesheet.png" id="1_ek7s3"]
+[ext_resource type="Script" uid="uid://c4bxlxhb78j3b" path="res://Scripts/ghost.gd" id="1_mselb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mselb"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lnoi"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpcs7"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsagp"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabaf"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y66nj"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwx1e"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3of1s"]
+atlas = ExtResource("1_ek7s3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urtqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mselb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lnoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpcs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsagp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dabaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y66nj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwx1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3of1s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ek7s3"]
+radius = 61.0
+height = 122.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mselb"]
+radius = 11.0
+
+[node name="Ghost" type="CharacterBody2D" unique_id=389897498]
+script = ExtResource("1_mselb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856874743]
+sprite_frames = SubResource("SpriteFrames_urtqy")
+animation = &"idle"
+
+[node name="detectionArea" type="Area2D" parent="." unique_id=1843856040]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1273467561]
+shape = SubResource("CapsuleShape2D_ek7s3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=224415012]
+shape = SubResource("CapsuleShape2D_mselb")
