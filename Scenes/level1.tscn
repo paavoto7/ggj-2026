@@ -5,13 +5,18 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4hvuo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vly50"]
+size = Vector2(125, 123)
+
 [node name="Node2D" type="Node2D" unique_id=259014528]
 
 [node name="Player" parent="." unique_id=1799530315 instance=ExtResource("1_4hvuo")]
-position = Vector2(0, -18)
+z_index = 10
+position = Vector2(1, -18)
 speed = 600.0
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2049018139]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=2049018139]
+position = Vector2(0, 18)
 position_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=431219131]
@@ -19,6 +24,11 @@ position_smoothing_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=513524557]
 shape = SubResource("WorldBoundaryShape2D_4hvuo")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=740563711]
-position = Vector2(86, -13)
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1619891888]
+position = Vector2(82, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=556776981]
+shape = SubResource("RectangleShape2D_vly50")
+
+[node name="Icon" type="Sprite2D" parent="Area2D" unique_id=740563711]
 texture = ExtResource("2_vly50")
