@@ -19,7 +19,7 @@ If problems arise, merge or rebase main to your branch. Ask for help if needed.
 ### Creating a branch
 1. Pull: `git pull origin main`
 2. Create a branch: `git branch [branch]`
-	- Or alternatively to create and checkout `git checkout -b [branch]`
+    - Or alternatively to create and checkout `git checkout -b [branch]`
 3. Change branch: `git checkout [branch]`
 
 ### After adding code/assets

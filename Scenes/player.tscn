@@ -8,6 +8,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f60y1"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1799530315]
+z_index = 10
 script = ExtResource("1_cvnsp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1937993721]
