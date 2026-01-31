@@ -245,7 +245,7 @@ sources/3 = SubResource("TileSetAtlasSource_txbhf")
 [node name="Node2D" type="Node2D" unique_id=259014528]
 scale = Vector2(3, 3)
 
-[node name="Player" parent="." unique_id=1799530315 instance=ExtResource("1_skpnj")]
+[node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_skpnj")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 position_smoothing_enabled = true
