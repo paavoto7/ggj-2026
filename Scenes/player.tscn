@@ -159,3 +159,7 @@ wait_time = 0.1
 one_shot = true
 
 [node name="BeamAttack" parent="AttackOrigin" unique_id=88917749 instance=ExtResource("9_f1ek2")]
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1168460107]
+position = Vector2(10, -4)
+target_position = Vector2(100, 0)
