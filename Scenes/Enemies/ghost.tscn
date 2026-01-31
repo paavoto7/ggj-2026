@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dte0r1vuepygt"]
 
 [ext_resource type="Texture2D" uid="uid://bji2ic2dm377d" path="res://Assets/Images/Enemy/ghost_spritesheet.png" id="1_ek7s3"]
-[ext_resource type="Script" uid="uid://c4bxlxhb78j3b" path="res://Scripts/ghost.gd" id="1_mselb"]
+[ext_resource type="Script" uid="uid://c4bxlxhb78j3b" path="res://Scripts/Enemy/enemy.gd" id="1_mselb"]
+[ext_resource type="Script" uid="uid://dm4qp5geg3h6b" path="res://Scripts/Enemy/EnemyMovement.gd" id="3_6lnoi"]
+[ext_resource type="Script" uid="uid://da6muv4flmxv7" path="res://Scripts/Enemy/AttackHandler.gd" id="3_cpcs7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mselb"]
 atlas = ExtResource("1_ek7s3")
@@ -65,6 +67,11 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ek7s3"]
@@ -79,12 +86,22 @@ script = ExtResource("1_mselb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856874743]
 sprite_frames = SubResource("SpriteFrames_urtqy")
-animation = &"idle"
+animation = &"walk"
+autoplay = "idle"
 
 [node name="detectionArea" type="Area2D" parent="." unique_id=1843856040]
+script = ExtResource("3_cpcs7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1273467561]
 shape = SubResource("CapsuleShape2D_ek7s3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=224415012]
 shape = SubResource("CapsuleShape2D_mselb")
+
+[node name="MovementNode" type="Node" parent="." unique_id=2089745201]
+script = ExtResource("3_6lnoi")
+
+[node name="FloorDetector" type="RayCast2D" parent="." unique_id=211741197]
+
+[connection signal="area_entered" from="detectionArea" to="detectionArea" method="_on_area_entered"]
+[connection signal="body_entered" from="detectionArea" to="detectionArea" method="_on_body_entered"]
