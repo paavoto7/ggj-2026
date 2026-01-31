@@ -267,6 +267,7 @@ position = Vector2(-370.33334, -48)
 position = Vector2(-87.666626, 14.666667)
 max_val = Vector2(53.333294, 0)
 min_val = Vector2(-291.66672, 0)
+movement_speed = 1.0
 
 [node name="Node2D" type="Node2D" parent="PingPongEnemy" unique_id=463877906]
 position = Vector2(53.333294, 0)

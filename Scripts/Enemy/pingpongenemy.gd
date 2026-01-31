@@ -11,8 +11,9 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     #add_to_group("interactables")
-    max_val.y = global_position.y
-    min_val.y = global_position.y
+    max_val.y = position.y
+    min_val.y = position.y
+    body_entered.connect(_on_body_enter)
     pass
 
 var elapsed_time: float = 0
@@ -33,6 +34,7 @@ func _on_body_enter(body: CharacterBody2D) -> void:
     
     if body is not Player:
         return
+    print("Hedgehod did damage")
     
     body.get_node("HealthNode").take_damage(damage_amount)
     
