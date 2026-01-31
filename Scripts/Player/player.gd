@@ -17,7 +17,9 @@ enum Direction { Left = -1, Right = 1 } # Not ideal...
 var dir_sign: Direction = Direction.Right
 var is_shooting: bool = false
 
+var anim_playing: bool = false
 func _physics_process(delta: float) -> void:
+    anim_playing = false
     # Add the gravity.
     if not is_on_floor():
         velocity += get_gravity() * delta
@@ -73,7 +75,9 @@ func _physics_process(delta: float) -> void:
     move_and_slide()
 
 func _play_anim(anim_name: StringName) -> void:
-    animated_sprite.play(anim_name)
+    if !anim_playing:
+        animated_sprite.play(anim_name)
+        anim_playing = true
 
 func _apply_callables() -> void:
     if not inventory.currentMask:
