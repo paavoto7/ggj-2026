@@ -97,6 +97,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="detectionArea" type="Area2D" parent="." unique_id=1843856040]
+position = Vector2(-1, 0)
 script = ExtResource("3_cpcs7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1273467561]

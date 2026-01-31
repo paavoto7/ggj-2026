@@ -2,6 +2,13 @@ class_name IdleState extends StateBase
 
 @export var default_speed: float = 300
 
+# !!! This is not idle yer
+
+var controller: Enemy = null
+
+func _init(e: Enemy) -> void:
+    controller = e
+
 # Called when entering the state
 func on_enter():
     pass
@@ -12,9 +19,9 @@ func on_exit(next_state: StateBase):
 
 # Called every frame while in this state
 func on_update(delta: float):
-    if direction:
-        velocity.x = direction * speed
-    else:
-        velocity.x = move_toward(velocity.x, 0, speed)
-
-    move_and_slide()
+    # Does not perhaps need anything ?
+    pass
+    #
+    #var animation: StringName = controller.get_animation()
+    #if animation != controller.animated_sprite.animation:
+    #    controller.animated_sprite.play(animation)

@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
-@export var speed: float = 300.0
-@export var jump_velocity: float = -400.0
+@export var speed: float = 300
+@export var jump_velocity: float = -460.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
@@ -62,7 +62,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			_play_anim("idle_right")
 	
-	move_and_slide()
+    if Input.is_action_just_pressed("attack"):
+        if attack_ray.is_colliding() and attack_ray.get_collider() is Enemy:
+            var enemy: Enemy = attack_ray.get_collider()
+            enemy.health.take_damage(50.0)
+        attack_handler.attack(dir_sign)
+    
+    _apply_callables()
+    
+    move_and_slide()
 
 func _play_anim(anim_name: StringName) -> void:
 	animated_sprite.play(anim_name)

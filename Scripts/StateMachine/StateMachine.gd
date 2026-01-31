@@ -14,7 +14,7 @@ func initialize(type_name: StringName) -> void:
 
 # Initialize with a specific state instance
 func initialize_with_state(state: StateBase) -> void:
-    var state_type = state.get_class()
+    var state_type = state.get_script().get_global_name()
     if not states.has(state_type):
         states[state_type] = state
 
@@ -23,7 +23,7 @@ func initialize_with_state(state: StateBase) -> void:
 
 # Add a state to the state machine
 func add_state(state: StateBase) -> void:
-    var state_type = state.get_class()
+    var state_type = state.get_script().get_global_name()
     states[state_type] = state
 
 # Get a state by type

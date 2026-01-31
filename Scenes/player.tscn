@@ -763,8 +763,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8erm5"]
-size = Vector2(28, 31)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gymyn"]
+radius = 8.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
 size = Vector2(48, 46)
@@ -789,8 +789,8 @@ animation = &"walk_left"
 autoplay = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699477332]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_8erm5")
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_gymyn")
 
 [node name="AttackOrigin" type="Marker2D" parent="." unique_id=988390960]
 position = Vector2(10, -4)
@@ -811,6 +811,7 @@ target_position = Vector2(400, 0)
 script = ExtResource("10_tx1dd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1778333448]
+visible = false
 position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_tx1dd")
 
