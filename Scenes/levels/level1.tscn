@@ -242,10 +242,10 @@ sources/1 = SubResource("TileSetAtlasSource_o4am0")
 sources/2 = SubResource("TileSetAtlasSource_oyuyp")
 sources/3 = SubResource("TileSetAtlasSource_txbhf")
 
-[node name="Node2D" type="Node2D" unique_id=259014528 groups=["interactables"]]
+[node name="Node2D" type="Node2D" unique_id=259014528]
 scale = Vector2(3, 3)
 
-[node name="Player" parent="." unique_id=1799530315 instance=ExtResource("1_skpnj")]
+[node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_skpnj")]
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 position_smoothing_enabled = true
@@ -256,7 +256,8 @@ tile_map_data = PackedByteArray("AAAAAAoAAgAEAAEAAAAAAAsAAgAEAAEAAAAAAAwAAgAEAAE
 tile_set = SubResource("TileSet_hh7mx")
 
 [node name="Ghost" parent="." unique_id=389897498 instance=ExtResource("2_hh7mx")]
-position = Vector2(304.33334, 6.666667)
+position = Vector2(184, -55.333332)
+CHASE_SPEED = 300.0
 
 [node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_udnv3")]
 position = Vector2(-370.33334, -48)
