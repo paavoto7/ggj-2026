@@ -124,7 +124,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8erm5"]
-size = Vector2(28, 31)
+size = Vector2(15, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=1799530315]
 z_index = 10
@@ -146,7 +146,7 @@ animation = &"jump_right"
 autoplay = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699477332]
-position = Vector2(0, 0.5)
+position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_8erm5")
 
 [node name="AttackOrigin" type="Marker2D" parent="." unique_id=988390960]
