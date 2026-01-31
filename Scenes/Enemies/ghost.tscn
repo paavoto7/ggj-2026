@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://c4bxlxhb78j3b" path="res://Scripts/Enemy/enemy.gd" id="1_mselb"]
 [ext_resource type="Script" uid="uid://dm4qp5geg3h6b" path="res://Scripts/Enemy/EnemyMovement.gd" id="3_6lnoi"]
 [ext_resource type="Script" uid="uid://da6muv4flmxv7" path="res://Scripts/Enemy/AttackHandler.gd" id="3_cpcs7"]
+[ext_resource type="Script" uid="uid://b0f25rysbfyag" path="res://Scripts/CharacterHealth.gd" id="5_lsagp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mselb"]
 atlas = ExtResource("1_ek7s3")
@@ -79,14 +80,20 @@ radius = 61.0
 height = 122.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mselb"]
-radius = 11.0
+radius = 16.0
+height = 38.0
 
 [node name="Ghost" type="CharacterBody2D" unique_id=389897498]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_mselb")
+
+[node name="HealthNode" type="Node" parent="." unique_id=450267669]
+script = ExtResource("5_lsagp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856874743]
 sprite_frames = SubResource("SpriteFrames_urtqy")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="detectionArea" type="Area2D" parent="." unique_id=1843856040]
@@ -97,6 +104,7 @@ shape = SubResource("CapsuleShape2D_ek7s3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=224415012]
 shape = SubResource("CapsuleShape2D_mselb")
+debug_color = Color(0.9831739, 0.0736484, 0.2765309, 0.41960785)
 
 [node name="MovementNode" type="Node" parent="." unique_id=2089745201]
 script = ExtResource("3_6lnoi")
