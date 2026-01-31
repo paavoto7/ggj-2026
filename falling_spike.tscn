@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b1qdb1b35btbc"]
+
+[ext_resource type="Script" uid="uid://dyogquw8lylhi" path="res://falling_spike.gd" id="1_unq0v"]
+[ext_resource type="Texture2D" uid="uid://celkoywbik6pv" path="res://icon.svg" id="2_7qr2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qr2s"]
+size = Vector2(100, 1202.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ht1w"]
+size = Vector2(200, 200)
+
+[node name="FallingSpike" type="Node2D" unique_id=1948382646]
+script = ExtResource("1_unq0v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=164055753]
+texture = ExtResource("2_7qr2s")
+
+[node name="TriggerArea" type="Area2D" parent="." unique_id=2081223105]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=529253731]
+position = Vector2(0, 554.625)
+shape = SubResource("RectangleShape2D_7qr2s")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=508419982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=765000833]
+shape = SubResource("RectangleShape2D_6ht1w")
+
+[node name="Node" type="Node" parent="." unique_id=788356721]
