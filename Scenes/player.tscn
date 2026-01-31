@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://l0h2b8rdorgg" path="res://Scripts/Player/PlayerAttack.gd" id="8_8erm5"]
 [ext_resource type="PackedScene" uid="uid://b3ihupwfhkbe3" path="res://Scenes/beamAttack.tscn" id="9_f1ek2"]
 [ext_resource type="Script" uid="uid://dyiqpymneakv6" path="res://Scripts/Player/PlayerInteraction.gd" id="10_tx1dd"]
+[ext_resource type="Script" uid="uid://cg5mundylejd7" path="res://Scripts/Player/inventory.gd" id="11_gymyn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
 atlas = ExtResource("6_f1ek2")
@@ -174,3 +175,10 @@ script = ExtResource("10_tx1dd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1778333448]
 position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_tx1dd")
+
+[node name="Inventory" type="Node" parent="." unique_id=925431212]
+script = ExtResource("11_gymyn")
+
+[node name="JumpTimer" type="Timer" parent="." unique_id=1669275665]
+wait_time = 0.05
+one_shot = true

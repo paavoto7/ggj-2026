@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var player: Player = self.get_parent() as Player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,5 +12,4 @@ func _physics_process(delta: float) -> void:
     if Input.is_action_pressed("interact"):
         for body in get_overlapping_areas():
             if body.is_in_group("interactables"):
-                body.interact()  # Call a method on the interactable
-
+                body.interact(player)  # Call a method on the interactable
