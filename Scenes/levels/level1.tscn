@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="4_o4am0"]
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="5_oyuyp"]
-[ext_resource type="PackedScene" uid="uid://dqxkfsylj2b5h" path="res://Scenes/Interactables/BreakableDirt.tscn" id="8_txbhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")
@@ -261,6 +260,3 @@ position = Vector2(304.33334, 6.666667)
 
 [node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_udnv3")]
 position = Vector2(-370.33334, -48)
-
-[node name="BreakableDirt" parent="." unique_id=16487404 instance=ExtResource("8_txbhf")]
-position = Vector2(-248.66667, -16)
