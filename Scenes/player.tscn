@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cbctxuar0jqcu" path="res://Assets/Images/Player/PriestGoLeft.png" id="6_f1ek2"]
 [ext_resource type="Script" uid="uid://l0h2b8rdorgg" path="res://Scripts/Player/PlayerAttack.gd" id="8_8erm5"]
 [ext_resource type="PackedScene" uid="uid://b3ihupwfhkbe3" path="res://Scenes/beamAttack.tscn" id="9_f1ek2"]
+[ext_resource type="Script" uid="uid://dyiqpymneakv6" path="res://Scripts/Player/PlayerInteraction.gd" id="10_tx1dd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
 atlas = ExtResource("6_f1ek2")
@@ -126,6 +127,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8erm5"]
 size = Vector2(28, 31)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
+size = Vector2(48, 46)
+
 [node name="Player" type="CharacterBody2D" unique_id=1799530315]
 z_index = 10
 collision_layer = 3
@@ -163,3 +167,10 @@ one_shot = true
 [node name="attack_ray" type="RayCast2D" parent="." unique_id=1168460107]
 position = Vector2(10, -4)
 target_position = Vector2(400, 0)
+
+[node name="detectionArea" type="Area2D" parent="." unique_id=1034731712]
+script = ExtResource("10_tx1dd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1778333448]
+position = Vector2(-1, -4)
+shape = SubResource("RectangleShape2D_tx1dd")

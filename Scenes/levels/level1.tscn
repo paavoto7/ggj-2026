@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1w6jpnc6hdrs" path="res://Assets/Images/Tilemap/phantompuffin demo tiles.png" id="1_rahoo"]
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_skpnj"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="2_hh7mx"]
+[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")
@@ -175,7 +176,7 @@ texture = ExtResource("1_rahoo")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_skpnj")
 
-[node name="Node2D" type="Node2D" unique_id=259014528]
+[node name="Node2D" type="Node2D" unique_id=259014528 groups=["interactables"]]
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 instance=ExtResource("1_skpnj")]
@@ -192,3 +193,6 @@ tile_set = SubResource("TileSet_hh7mx")
 
 [node name="Ghost" parent="." unique_id=389897498 instance=ExtResource("2_hh7mx")]
 position = Vector2(304.33334, 6.666667)
+
+[node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_udnv3")]
+position = Vector2(-370.33334, 3.333333)
