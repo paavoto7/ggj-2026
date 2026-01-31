@@ -5,8 +5,11 @@ class_name Player extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
-
 @onready var attack_ray: RayCast2D = $attack_ray as RayCast2D
+
+@onready var inventory: Inventory = $Inventory as Inventory
+
+@onready var jump_timer: Timer = $JumpTimer as Timer
 
 var direction: float = 0
 
@@ -19,13 +22,14 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-		if direction < 0:
-			_play_anim("jump_left")
-		else:
-			_play_anim("jump_right")
+    # Handle jump.
+    if is_on_floor() and Input.is_action_just_pressed("jump"):
+        velocity.y = jump_velocity
+        if direction < 0:
+            _play_anim("jump_left")
+        else:
+            _play_anim("jump_right")
+        jump_timer.start()
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -46,13 +50,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-	if Input.is_action_just_pressed("attack"):
-		if attack_ray.is_colliding() and not attack_ray.get_collider() is Enemy:
-			var enemy: Enemy = attack_ray.get_collider()
-			enemy.health.take_damage(50.0)
-		attack_handler.attack(dir_sign)
-	
-	move_and_slide()
+    if Input.is_action_just_pressed("attack"):
+        if attack_ray.is_colliding() and not attack_ray.get_collider() is Enemy:
+            var enemy: Enemy = attack_ray.get_collider()
+            enemy.health.take_damage(50.0)
+        attack_handler.attack(dir_sign)
+    
+    move_and_slide()
 
 func _play_anim(anim_name: StringName) -> void:
-	animated_sprite.play(anim_name)
+    animated_sprite.play(anim_name)

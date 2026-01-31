@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bwgktr4bs2i1a" path="res://Assets/Images/Tilemap/Forest/sprite_1.png" id="5_oyuyp"]
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="6_txbhf"]
 [ext_resource type="Texture2D" uid="uid://cve5eublopngt" path="res://Assets/Images/Tilemap/Forest/tileset_multa2.png" id="7_txbhf"]
+[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")
@@ -268,7 +269,7 @@ sources/5 = SubResource("TileSetAtlasSource_qptf1")
 sources/6 = SubResource("TileSetAtlasSource_lhsqt")
 
 [node name="Node2D" type="Node2D" unique_id=259014528]
-scale = Vector2(6, 6)
+scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 instance=ExtResource("1_skpnj")]
 speed = 600.0
@@ -284,3 +285,6 @@ tile_set = SubResource("TileSet_hh7mx")
 
 [node name="Ghost" parent="." unique_id=389897498 instance=ExtResource("2_hh7mx")]
 position = Vector2(304.33334, 6.666667)
+
+[node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_udnv3")]
+position = Vector2(-370.33334, -48)
