@@ -1,4 +1,4 @@
-extends Node
+class_name CharacterHealth extends Node
 
 @export var MAX_HEALTH: float = 100
 @export var health: float = MAX_HEALTH

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b3ihupwfhkbe3"]
+
+[ext_resource type="Script" uid="uid://byqy0nkcd76ep" path="res://Scripts/beam_attack.gd" id="1_oys5y"]
+
+[node name="BeamAttack" type="RayCast2D" unique_id=88917749]
+script = ExtResource("1_oys5y")
+beam_width = 2.0
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1616846506]
+
+[node name="BeamTime" type="Timer" parent="." unique_id=157094024]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="BeamTime" to="." method="stop_fire"]
