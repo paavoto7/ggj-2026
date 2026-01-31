@@ -195,4 +195,4 @@ tile_set = SubResource("TileSet_hh7mx")
 position = Vector2(304.33334, 6.666667)
 
 [node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_udnv3")]
-position = Vector2(-370.33334, 3.333333)
+position = Vector2(-370.33334, -48)
