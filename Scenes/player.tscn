@@ -1,23 +1,144 @@
 [gd_scene format=3 uid="uid://bykxo2lthnfm6"]
 
-[ext_resource type="Script" uid="uid://caxu70e1ce6gn" path="res://Scripts/playerMovement.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://dx7l6436ohk47" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://dbw31hodfbaku" path="res://Assets/player.png" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://b0f25rysbfyag" path="res://Scripts/CharacterHealth.gd" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://cdxi5olamts3a" path="res://Assets/Images/Player/PriestJumpLeft.png" id="4_3smsa"]
+[ext_resource type="Texture2D" uid="uid://chni4nqs5pmuh" path="res://Assets/Images/Player/priest_spritesheet.png" id="4_vgqql"]
+[ext_resource type="Texture2D" uid="uid://dcgff533cnw6x" path="res://Assets/Images/Player/PriestJumpRight.png" id="5_8erm5"]
+[ext_resource type="Texture2D" uid="uid://cbctxuar0jqcu" path="res://Assets/Images/Player/PriestGoLeft.png" id="6_f1ek2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("6_f1ek2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
+atlas = ExtResource("6_f1ek2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
+atlas = ExtResource("6_f1ek2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
+atlas = ExtResource("6_f1ek2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
+atlas = ExtResource("6_f1ek2")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
+atlas = ExtResource("6_f1ek2")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("4_vgqql")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("4_vgqql")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("4_vgqql")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("4_vgqql")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("4_vgqql")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("4_vgqql")
+region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cvnsp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3smsa")
+}],
+"loop": true,
+"name": &"jump_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8erm5")
+}],
+"loop": true,
+"name": &"jump_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2lt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukyrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dp3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd4e3")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f60y1"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1799530315]
 z_index = 10
-script = ExtResource("1_cvnsp")
+script = ExtResource("1_6t5aa")
+
+[node name="HealthNode" type="Node" parent="." unique_id=692960786]
+script = ExtResource("3_6t5aa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1937993721]
+visible = false
 scale = Vector2(0.62499994, 1)
 texture = ExtResource("1_v0iea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1225442316]
-visible = false
 sprite_frames = SubResource("SpriteFrames_cvnsp")
+animation = &"jump_right"
+autoplay = "walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699477332]
 shape = SubResource("CapsuleShape2D_f60y1")

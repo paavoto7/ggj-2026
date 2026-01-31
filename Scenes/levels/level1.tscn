@@ -179,7 +179,7 @@ sources/0 = SubResource("TileSetAtlasSource_skpnj")
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 instance=ExtResource("1_skpnj")]
-speed = 800.0
+speed = 600.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 zoom = Vector2(0.5, 0.5)
