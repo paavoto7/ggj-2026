@@ -2,6 +2,8 @@ extends Area2D
 
 @export var damage_amount: float = 25
 
+@onready var controller: Enemy = self.get_parent() as Enemy
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     pass # Replace with function body.
@@ -19,9 +21,5 @@ func _on_body_entered(body: Node2D) -> void:
 
     if body is not Player:
         return
-    print(body)
-    
-    var player_health := body.get_node("HealthNode")
-    if player_health:
-        player_health.take_damage(damage_amount)
-    pass # Replace with function body.
+
+    controller.state_machine.change_state("AttackState")    
