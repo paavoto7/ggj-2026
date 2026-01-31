@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="4_o4am0"]
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="5_oyuyp"]
+[ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_txbhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")
@@ -261,3 +262,15 @@ CHASE_SPEED = 300.0
 
 [node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_udnv3")]
 position = Vector2(-370.33334, -48)
+
+[node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("8_txbhf")]
+position = Vector2(-87.666626, 14.666667)
+max_val = Vector2(53.333294, 0)
+min_val = Vector2(-291.66672, 0)
+movement_speed = 1.0
+
+[node name="Node2D" type="Node2D" parent="PingPongEnemy" unique_id=463877906]
+position = Vector2(53.333294, 0)
+
+[node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
+position = Vector2(-291.66672, 0)
