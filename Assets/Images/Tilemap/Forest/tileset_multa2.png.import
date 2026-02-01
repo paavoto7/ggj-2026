@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci2xxvt00j7tj"
-path="res://.godot/imported/sprite_0.png-3caaf0685d340bd7c94db8f293480b36.ctex"
+uid="uid://b256rao3fely5"
+path="res://.godot/imported/tileset_multa2.png-695bcfa029bafd4cb26d166e647cc126.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Tilemap/sprite_0.png"
-dest_files=["res://.godot/imported/sprite_0.png-3caaf0685d340bd7c94db8f293480b36.ctex"]
+source_file="res://Assets/Images/Tilemap/Forest/tileset_multa2.png"
+dest_files=["res://.godot/imported/tileset_multa2.png-695bcfa029bafd4cb26d166e647cc126.ctex"]
 
 [params]
 
