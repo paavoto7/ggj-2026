@@ -51,6 +51,7 @@
 [ext_resource type="Script" uid="uid://b7hlcsexibmbx" path="res://Scripts/game_over.gd" id="49_5x828"]
 [ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Tiny5-Regular.ttf" id="50_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://dxccpoi7gpyqd" path="res://Assets/Images/gameover_tausta.png" id="51_e6mvm"]
+[ext_resource type="Texture2D" uid="uid://cuuabtso1mi73" path="res://Assets/Images/KIVInapis.png" id="52_57lvd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
 atlas = ExtResource("4_xuaoq")
@@ -1163,6 +1164,10 @@ bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.18431373)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6mvm"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 0.8784314)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gchq"]
+atlas = ExtResource("52_57lvd")
+region = Rect2(0, 0, 32, 16)
+
 [node name="Player" type="CharacterBody2D" unique_id=1799530315]
 z_index = 10
 collision_layer = 3
@@ -1292,14 +1297,53 @@ vertical_alignment = 1
 
 [node name="Retry" type="Button" parent="GameOver/Control" unique_id=1776640258]
 layout_mode = 0
-offset_left = 576.0
-offset_top = 448.0
-offset_right = 699.0
-offset_bottom = 511.0
+offset_left = 551.0
+offset_top = 351.0
+offset_right = 732.0
+offset_bottom = 442.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("50_c1k8q")
 theme_override_font_sizes/font_size = 32
 text = "Retry"
+icon = SubResource("AtlasTexture_0gchq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BackToMenu" type="Button" parent="GameOver/Control" unique_id=1860126657]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 567.0
+offset_right = 732.0
+offset_bottom = 658.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+icon = SubResource("AtlasTexture_0gchq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hub" type="Button" parent="GameOver/Control" unique_id=848751018]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 461.0
+offset_right = 732.0
+offset_bottom = 552.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 32
+text = "Hub
+"
+icon = SubResource("AtlasTexture_0gchq")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="GameOver/Control/Retry" to="GameOver" method="_on_retry_pressed"]
+[connection signal="pressed" from="GameOver/Control/BackToMenu" to="GameOver" method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="GameOver/Control/Hub" to="GameOver" method="_on_hub_pressed"]
