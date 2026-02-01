@@ -4,7 +4,7 @@ extends Control
 
 func _on_start_game_pressed() -> void:
 	print("BUTTON PRESSED")
-	get_tree().change_scene_to_file("res://Scenes/levels/level4.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/levels/level3.tscn") # Replace with function body.
 
 func _on_start_game_2_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/levels/level2.tscn")
