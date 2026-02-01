@@ -21,7 +21,11 @@ func remove_item(item: Node) -> void:
 func apply_mask(mask: MaskItem) -> void:
     if not mask and inventory.has(mask as Node):
         return
+    if currentMask:
+        currentMask.unset_static_effects()
+    
     currentMask = mask
+    mask.set_static_effects()
 
 func change_current_item(item: Node) -> void:
     if item and inventory.has(item):
