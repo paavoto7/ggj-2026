@@ -2,16 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_sjedw"]
 [ext_resource type="Texture2D" uid="uid://4y55slichqsr" path="res://Assets/Images/Tilemap/Winter_lopullinen_KYSYMYSMERKKI.png" id="2_w7nad"]
+[ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_782v1"]
+[ext_resource type="Texture2D" uid="uid://bhj25auo5id3u" path="res://Assets/Images/Masks/H1Rotating.png" id="5_sjedw"]
+[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="6_eloyq"]
+[ext_resource type="Script" uid="uid://djcol27seykuo" path="res://Scripts/Interactables/Masks/MaskInstances/IceMask.gd" id="6_oocy4"]
 [ext_resource type="Texture2D" uid="uid://4clm125neb6r" path="res://Assets/Images/lvl2_parallax/sprite_0.png" id="6_wqqg4"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="6_y05r8"]
 [ext_resource type="Texture2D" uid="uid://chmudf1d4ty3a" path="res://Assets/Images/lvl2_parallax/sprite_1.png" id="7_4wxk4"]
-[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="7_oh6hf"]
 [ext_resource type="Texture2D" uid="uid://dtdnqyjusddwm" path="res://Assets/Images/lvl2_parallax/sprite_2.png" id="8_fg74y"]
-[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="6_eloyq"]
-[ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_782v1"]
-[ext_resource type="Texture2D" uid="uid://bhj25auo5id3u" path="res://Assets/Images/Masks/H1Rotating.png" id="5_sjedw"]
-[ext_resource type="Script" uid="uid://djcol27seykuo" path="res://Scripts/Interactables/Masks/MaskInstances/IceMask.gd" id="6_oocy4"]
-[ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="6_y05r8"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_pjwhy"]
 [ext_resource type="Texture2D" uid="uid://vdh24o42gru8" path="res://Assets/Images/lvl2_parallax/sprite_3.png" id="9_y05r8"]
 [ext_resource type="Texture2D" uid="uid://bpn7fanb2neoa" path="res://Assets/Images/lvl2_parallax/sprite_4.png" id="10_oh6hf"]
@@ -178,7 +176,7 @@ tile_map_data = PackedByteArray("AAAFAPz/BQAHAAEAAAAFAP3/BQAHAAEAAAAFAP7/BQAHAAE
 tile_set = SubResource("TileSet_hh7mx")
 
 [node name="Ghost" parent="." unique_id=389897498 instance=ExtResource("6_y05r8")]
-position = Vector2(-103.66667, -62.33333)
+position = Vector2(672.6667, 52.333344)
 CHASE_SPEED = 300.0
 
 [node name="Mask" type="Area2D" parent="." unique_id=2051030919 groups=["interactables"]]
@@ -197,9 +195,9 @@ autoplay = "default"
 script = ExtResource("6_oocy4")
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("8_pjwhy")]
-position = Vector2(38.333344, -37.33333)
+position = Vector2(101.33333, 13.999999)
 max_val = Vector2(53.333294, 0)
-min_val = Vector2(-291.66672, 0)
+min_val = Vector2(-50, 0)
 movement_speed = 1.0
 
 [node name="Node2D" type="Node2D" parent="PingPongEnemy" unique_id=463877906]
@@ -266,5 +264,6 @@ z_index = -1
 position = Vector2(6419, 160.00002)
 scale = Vector2(14.245, 14.337)
 texture = ExtResource("10_oh6hf")
+
 [node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("6_eloyq")]
 position = Vector2(0, 476.66666)
