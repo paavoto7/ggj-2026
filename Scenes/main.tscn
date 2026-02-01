@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="3_8gbba"]
 [ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Tiny5-Regular.ttf" id="3_21xkr"]
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="3_jjvhh"]
-[ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="7_6bp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("3_8gbba")
@@ -93,42 +92,46 @@ tile_map_data = PackedByteArray("AAAAAAkAAAABAAEAAAABAAkAAAABAAAAAAACAAkAAAABAAE
 tile_set = SubResource("TileSet_kry3j")
 
 [node name="Kirkki" type="Sprite2D" parent="Node2D" unique_id=1444056179]
-position = Vector2(289.5, 99.74999)
+position = Vector2(262, 99.74999)
 scale = Vector2(0.7402344, 0.69921875)
 texture = ExtResource("2_bo1nx")
 
 [node name="Start Game" type="Button" parent="." unique_id=855084759]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 305.0
-offset_right = 187.0
-offset_bottom = 329.0
-scale = Vector2(7.715, 5)
+offset_left = 158.0
+offset_top = 351.0
+offset_right = 198.0
+offset_bottom = 375.0
+scale = Vector2(8.285, 4.143)
 size_flags_horizontal = 8
 size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_21xkr")
+theme_override_font_sizes/font_size = 6
 icon = SubResource("AtlasTexture_21xkr")
 flat = true
 autowrap_trim_flags = 0
 clip_text = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="Start Game" unique_id=1405628955]
-visible = false
+[node name="Label" type="Label" parent="." unique_id=1790039380]
 layout_mode = 0
-offset_left = 3.7297468
-offset_top = 5.1000004
-offset_right = 37.597584
-offset_bottom = 21.013977
-scale = Vector2(0.93, 0.93)
+offset_left = 250.0
+offset_top = 380.0
+offset_right = 401.0
+offset_bottom = 416.0
 theme_override_fonts/font = ExtResource("3_21xkr")
-theme_override_font_sizes/font_size = 10
-text = "Forest"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_font_sizes/font_size = 31
+text = "Start Game"
 
-[node name="Player" parent="." unique_id=1799530315 instance=ExtResource("7_6bp64")]
-visible = false
-position = Vector2(938, 557)
+[node name="Label2" type="Label" parent="." unique_id=272500626]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 70.0
+offset_right = 1128.0
+offset_bottom = 214.0
+theme_override_fonts/font = ExtResource("3_21xkr")
+theme_override_font_sizes/font_size = 128
+text = "Priest's Holy Quest"
 
 [connection signal="pressed" from="VBoxContainer/Start Game2" to="." method="_on_start_game_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start Game2" to="." method="_on_start_game_pressed"]
