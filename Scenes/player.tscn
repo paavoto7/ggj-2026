@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://bd2hphs5vei3t" path="res://Assets/Images/Player/H5PriestRunLeft.png" id="35_e6mvm"]
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
 [ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
+[ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
 atlas = ExtResource("4_xuaoq")
@@ -1205,3 +1206,6 @@ script = ExtResource("11_gymyn")
 [node name="JumpTimer" type="Timer" parent="." unique_id=1669275665]
 wait_time = 0.05
 one_shot = true
+
+[node name="StepSounds" type="AudioStreamPlayer2D" parent="." unique_id=133024254]
+stream = ExtResource("46_ax3m3")
