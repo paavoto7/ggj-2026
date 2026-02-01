@@ -46,8 +46,12 @@
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
 [ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
 [ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
-[ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
+[ext_resource type="Script" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
 [ext_resource type="Texture2D" uid="uid://c6l4u7jncc131" path="res://Assets/Images/Player/sydan.png" id="48_8eeqe"]
+[ext_resource type="Script" uid="uid://b7hlcsexibmbx" path="res://Scripts/game_over.gd" id="49_5x828"]
+[ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Tiny5-Regular.ttf" id="50_c1k8q"]
+[ext_resource type="Texture2D" uid="uid://dxccpoi7gpyqd" path="res://Assets/Images/gameover_tausta.png" id="51_e6mvm"]
+[ext_resource type="Texture2D" uid="uid://cuuabtso1mi73" path="res://Assets/Images/KIVInapis.png" id="52_57lvd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
 atlas = ExtResource("4_xuaoq")
@@ -1154,6 +1158,16 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
 size = Vector2(48, 46)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x828"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.18431373)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6mvm"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 0.8784314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gchq"]
+atlas = ExtResource("52_57lvd")
+region = Rect2(0, 0, 32, 16)
+
 [node name="Player" type="CharacterBody2D" unique_id=1799530315]
 z_index = 10
 collision_layer = 3
@@ -1189,7 +1203,7 @@ attack_sound = ExtResource("42_nmr2m")
 target_position = Vector2(400, 0)
 
 [node name="Cooldown" type="Timer" parent="AttackOrigin" unique_id=110001427]
-wait_time = 0.1
+wait_time = 0.8
 one_shot = true
 
 [node name="BeamAttack" parent="AttackOrigin" unique_id=88917749 instance=ExtResource("9_f1ek2")]
@@ -1224,18 +1238,112 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/Control" unique_id=1055610651]
-position = Vector2(152.75, 115.75)
-scale = Vector2(10.03125, 10.03125)
+position = Vector2(162.25, 122.74999)
+scale = Vector2(11.21875, 10.906249)
 texture = ExtResource("48_8eeqe")
 
 [node name="Label" type="Label" parent="HUD/Control" unique_id=134740603]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 36.0
-offset_right = 151.25
-offset_bottom = 118.25
-scale = Vector2(2, 2)
-theme_override_font_sizes/font_size = 22
+offset_left = 89.0
+offset_top = 77.0
+offset_right = 241.25
+offset_bottom = 159.25
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 64
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameOver" type="CanvasLayer" parent="." unique_id=139467605]
+script = ExtResource("49_5x828")
+
+[node name="Control" type="Control" parent="GameOver" unique_id=106332857]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel2" type="TextureRect" parent="GameOver/Control" unique_id=1657699367]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("51_e6mvm")
+
+[node name="Panel" type="Panel" parent="GameOver/Control" unique_id=1552352747]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -28.0
+offset_right = 1326.0
+offset_bottom = 783.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5x828")
+
+[node name="Panel3" type="Panel" parent="GameOver/Control" unique_id=1130754272]
+layout_mode = 0
+offset_left = 378.0
+offset_top = 163.0
+offset_right = 899.0
+offset_bottom = 297.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6mvm")
+
+[node name="Label" type="Label" parent="GameOver/Control" unique_id=1875334719]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 469.0
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 128
+text = "You died!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Retry" type="Button" parent="GameOver/Control" unique_id=1776640258]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 351.0
+offset_right = 732.0
+offset_bottom = 442.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 32
+text = "Retry"
+icon = SubResource("AtlasTexture_0gchq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="BackToMenu" type="Button" parent="GameOver/Control" unique_id=1860126657]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 567.0
+offset_right = 732.0
+offset_bottom = 658.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 32
+text = "Main Menu"
+icon = SubResource("AtlasTexture_0gchq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Hub" type="Button" parent="GameOver/Control" unique_id=848751018]
+layout_mode = 0
+offset_left = 551.0
+offset_top = 461.0
+offset_right = 732.0
+offset_bottom = 552.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 32
+text = "Hub
+"
+icon = SubResource("AtlasTexture_0gchq")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="GameOver/Control/Retry" to="GameOver" method="_on_retry_pressed"]
+[connection signal="pressed" from="GameOver/Control/BackToMenu" to="GameOver" method="_on_back_to_menu_pressed"]
+[connection signal="pressed" from="GameOver/Control/Hub" to="GameOver" method="_on_hub_pressed"]

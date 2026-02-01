@@ -41,7 +41,6 @@ func _on_body_enter(body: Node2D) -> void:
     
     if body is not Player:
         return
-    print("Hedgehod did damage")
     
     body.get_node("HealthNode").take_damage(damage_amount)
     
