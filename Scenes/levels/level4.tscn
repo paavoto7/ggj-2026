@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bsxah0rqsff7y"]
+[gd_scene format=4 uid="uid://bhbhnalirv5rc"]
 
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_ofi80"]
 [ext_resource type="Texture2D" uid="uid://c56ig3a360lxs" path="res://Assets/Images/Tilemap/tileset_sand.png" id="2_ofi80"]
@@ -58,7 +58,7 @@ tile_map_data = PackedByteArray("AADt//j/AAABAAEAAADt//n/AAABAAEAAADt//r/AAABAAE
 tile_set = SubResource("TileSet_hh7mx")
 
 [node name="Ghost" parent="." unique_id=389897498 instance=ExtResource("3_ia2ng")]
-position = Vector2(-103.66667, -62.33333)
+position = Vector2(-78.66667, -56)
 CHASE_SPEED = 300.0
 
 [node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_5rtj3")]
@@ -66,12 +66,12 @@ position = Vector2(684.6667, -49.333332)
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_mrlvs")]
 position = Vector2(128.66667, -26)
-max_val = Vector2(53.333294, 0)
-min_val = Vector2(-291.66672, 0)
+max_val = Vector2(31.197998, 0)
+min_val = Vector2(-29.666668, 0)
 movement_speed = 1.0
 
 [node name="Node2D" type="Node2D" parent="PingPongEnemy" unique_id=463877906]
-position = Vector2(31.197998, 0)
+position = Vector2(-29.666668, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
-position = Vector2(-32.830338, 0)
+position = Vector2(31.197998, 0)
