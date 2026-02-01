@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_sjedw"]
 [ext_resource type="Texture2D" uid="uid://4y55slichqsr" path="res://Assets/Images/Tilemap/Winter_lopullinen_KYSYMYSMERKKI.png" id="2_w7nad"]
+[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="6_eloyq"]
 [ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_782v1"]
 [ext_resource type="Texture2D" uid="uid://bhj25auo5id3u" path="res://Assets/Images/Masks/H1Rotating.png" id="5_sjedw"]
 [ext_resource type="Script" uid="uid://djcol27seykuo" path="res://Scripts/Interactables/Masks/MaskInstances/IceMask.gd" id="6_oocy4"]
@@ -199,3 +200,6 @@ position = Vector2(95.198, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
 position = Vector2(-59.497, 0)
+
+[node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("6_eloyq")]
+position = Vector2(0, 476.66666)

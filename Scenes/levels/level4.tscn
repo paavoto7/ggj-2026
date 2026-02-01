@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_ofi80"]
 [ext_resource type="Texture2D" uid="uid://c56ig3a360lxs" path="res://Assets/Images/Tilemap/tileset_sand.png" id="2_ofi80"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_ia2ng"]
+[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_5rtj3"]
+[ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
+[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="5_n7m84"]
 [ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_ia2ng"]
 [ext_resource type="Texture2D" uid="uid://hmdu4x3bpbvi" path="res://Assets/Images/Masks/H3Rotating.png" id="5_5rtj3"]
 [ext_resource type="PackedScene" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
@@ -144,6 +147,9 @@ autoplay = "default"
 
 [node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
 script = ExtResource("6_ia2ng")
+
+[node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("5_n7m84")]
+position = Vector2(0, 186.33334)
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_mrlvs")]
 position = Vector2(128.66667, -26)

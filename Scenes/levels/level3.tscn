@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_v6amx"]
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_a4sp7"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_73dj2"]
+[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="6_df4gu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df4gu"]
 texture = ExtResource("2_5vxev")
@@ -118,3 +119,6 @@ position = Vector2(95.198, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
 position = Vector2(-59.497, 0)
+
+[node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("6_df4gu")]
+position = Vector2(0, -281.33337)
