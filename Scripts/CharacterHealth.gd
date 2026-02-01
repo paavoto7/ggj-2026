@@ -20,5 +20,5 @@ func take_damage(amount: int) -> void:
 
 func _died() -> void:
 	AudioManager.play_sfx_2d(death_sound, global_position)
-	get_parent().queue_free()
+	$"../GameOver".game_over()
 	pass
