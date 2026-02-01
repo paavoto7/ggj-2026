@@ -1,12 +1,12 @@
-[gd_scene format=4 uid="uid://bhbhnalirv5rc"]
+[gd_scene format=4 uid="uid://caktnmsy3qojk"]
 
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_ofi80"]
 [ext_resource type="Texture2D" uid="uid://c56ig3a360lxs" path="res://Assets/Images/Tilemap/tileset_sand.png" id="2_ofi80"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_ia2ng"]
 [ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_ia2ng"]
 [ext_resource type="Texture2D" uid="uid://hmdu4x3bpbvi" path="res://Assets/Images/Masks/H3Rotating.png" id="5_5rtj3"]
-[ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
-[ext_resource type="Script" uid="uid://ymxaj0ps2nld" path="res://Scripts/Interactables/Masks/MaskInstances/DesertMask.gd" id="6_ia2ng"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
+[ext_resource type="Script" path="res://Scripts/Interactables/Masks/MaskInstances/DesertMask.gd" id="6_ia2ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7m84"]
 texture = ExtResource("2_ofi80")

@@ -6,3 +6,4 @@ extends CanvasLayer
 
 func _process(delta: float) -> void:
 	label.text = str(healthNode.health)
+	
