@@ -20,7 +20,7 @@ config/version="0.1"
 run/main_scene="uid://i4budr6yn1pb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0.17624316, 0.13747647, 0, 1)
-config/icon="res://icon.svg"
+config/icon="uid://nsdl1h2rfdbk"
 
 [autoload]
 

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bykxo2lthnfm6"]
 
 [ext_resource type="Script" uid="uid://dx7l6436ohk47" path="res://Scripts/Player/player.gd" id="1_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://dbw31hodfbaku" path="res://Assets/player.png" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://b0f25rysbfyag" path="res://Scripts/CharacterHealth.gd" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://b8wde7n3wtpf6" path="res://Assets/Audio/PriestDeathS.wav" id="3_r7t2e"]
 [ext_resource type="Texture2D" uid="uid://cum78r37jm36p" path="res://Assets/Images/Player/PriestJumpLeft.png" id="4_3smsa"]
@@ -49,7 +48,7 @@
 [ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
 [ext_resource type="Texture2D" uid="uid://c6l4u7jncc131" path="res://Assets/Images/Player/sydan.png" id="48_8eeqe"]
 [ext_resource type="Script" uid="uid://b7hlcsexibmbx" path="res://Scripts/game_over.gd" id="49_5x828"]
-[ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Tiny5-Regular.ttf" id="50_c1k8q"]
+[ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="50_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://dxccpoi7gpyqd" path="res://Assets/Images/gameover_tausta.png" id="51_e6mvm"]
 [ext_resource type="Texture2D" uid="uid://cuuabtso1mi73" path="res://Assets/Images/KIVInapis.png" id="52_57lvd"]
 
@@ -1178,11 +1177,6 @@ script = ExtResource("1_6t5aa")
 script = ExtResource("3_6t5aa")
 death_sound = ExtResource("3_r7t2e")
 hurt_sound = ExtResource("4_nmr2m")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1937993721]
-visible = false
-scale = Vector2(0.62499994, 1)
-texture = ExtResource("1_v0iea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1225442316]
 sprite_frames = SubResource("SpriteFrames_cvnsp")

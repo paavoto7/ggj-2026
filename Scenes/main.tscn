@@ -1,10 +1,10 @@
 [gd_scene format=4 uid="uid://i4budr6yn1pb"]
 
-[ext_resource type="Script" uid="uid://do6oebix1rkbi" path="res://Scenes/main_menu.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://do6oebix1rkbi" path="res://Scripts/main_menu.gd" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cg6ktv223su6i" path="res://Assets/Images/KIRKKI.png" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://cuuabtso1mi73" path="res://Assets/Images/KIVInapis.png" id="2_kry3j"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="3_8gbba"]
-[ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Tiny5-Regular.ttf" id="3_21xkr"]
+[ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="3_21xkr"]
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="3_jjvhh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
