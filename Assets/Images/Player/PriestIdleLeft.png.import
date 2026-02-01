@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cum78r37jm36p"
-path="res://.godot/imported/PriestJumpLeft.png-f5069335c72a3b184330db650a66991e.ctex"
+uid="uid://gqmx7xoots6r"
+path="res://.godot/imported/PriestIdleLeft.png-526ee0c2756dd13e7e78a5bd86f70396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Player/PriestJumpLeft.png"
-dest_files=["res://.godot/imported/PriestJumpLeft.png-f5069335c72a3b184330db650a66991e.ctex"]
+source_file="res://Assets/Images/Player/PriestIdleLeft.png"
+dest_files=["res://.godot/imported/PriestIdleLeft.png-526ee0c2756dd13e7e78a5bd86f70396.ctex"]
 
 [params]
 

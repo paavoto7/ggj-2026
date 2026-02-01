@@ -3,6 +3,9 @@ class_name Player extends CharacterBody2D
 @export var speed: float = 300
 @export var jump_velocity: float = -460.0
 
+@export var coyote_time: float = 0.1
+@export var jump_buffer_time: float = 0.1
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
 @onready var attack_ray: RayCast2D = $attack_ray as RayCast2D
@@ -18,20 +21,46 @@ var dir_sign: Direction = Direction.Right
 var is_shooting: bool = false
 
 var anim_playing: bool = false
+
+var coyote_timer: float = 0.0
+var jump_buffer_timer: float = 0.0
+
 func _physics_process(delta: float) -> void:
     anim_playing = false
+    
+    coyote_timer -= delta
+    jump_buffer_timer -= delta
+
+    if is_on_floor():
+        coyote_timer = coyote_time
+
+    
     # Add the gravity.
     if not is_on_floor():
         velocity += get_gravity() * delta
 
     # Handle jump.
-    if is_on_floor() and Input.is_action_just_pressed("jump"):
-        velocity.y = jump_velocity
-        if direction < 0:
-            _play_anim("jump_left")
-        else:
-            _play_anim("jump_right")
-        jump_timer.start()
+    if Input.is_action_just_pressed("jump"):
+        jump_buffer_timer = jump_buffer_time
+
+        if is_on_floor():
+            velocity.y = jump_velocity
+            if direction < 0:
+                _play_anim("jump_left")
+            else:
+                _play_anim("jump_right")
+            jump_timer.start()
+            
+        if jump_buffer_timer > 0 and coyote_timer > 0 and not is_on_floor():
+            velocity.y = jump_velocity
+            jump_buffer_timer = 0
+            coyote_timer = 0
+            if direction < 0:
+                _play_anim("jump_left")
+            else:
+                _play_anim("jump_right")
+            jump_timer.start()
+
 
     # Get the input direction and handle the movement/deceleration.
     # As good practice, you should replace UI actions with custom gameplay actions.

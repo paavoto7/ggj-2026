@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cum78r37jm36p"
-path="res://.godot/imported/PriestJumpLeft.png-f5069335c72a3b184330db650a66991e.ctex"
+uid="uid://c56ig3a360lxs"
+path="res://.godot/imported/tileset_sand.png-713b49ce557cfc095f09dc528f39b784.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Player/PriestJumpLeft.png"
-dest_files=["res://.godot/imported/PriestJumpLeft.png-f5069335c72a3b184330db650a66991e.ctex"]
+source_file="res://Assets/Images/Tilemap/tileset_sand.png"
+dest_files=["res://.godot/imported/tileset_sand.png-713b49ce557cfc095f09dc528f39b784.ctex"]
 
 [params]
 
