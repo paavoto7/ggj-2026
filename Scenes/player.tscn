@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
 [ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
 [ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
-[ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
+[ext_resource type="Script" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
 [ext_resource type="Texture2D" uid="uid://c6l4u7jncc131" path="res://Assets/Images/Player/sydan.png" id="48_8eeqe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
@@ -1189,7 +1189,7 @@ attack_sound = ExtResource("42_nmr2m")
 target_position = Vector2(400, 0)
 
 [node name="Cooldown" type="Timer" parent="AttackOrigin" unique_id=110001427]
-wait_time = 0.1
+wait_time = 0.8
 one_shot = true
 
 [node name="BeamAttack" parent="AttackOrigin" unique_id=88917749 instance=ExtResource("9_f1ek2")]

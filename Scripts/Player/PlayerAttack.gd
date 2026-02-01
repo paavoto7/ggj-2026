@@ -1,7 +1,7 @@
 class_name PlayerAttack extends Marker2D
 
 @export var RANGE: float = 50
-@export var damage_amount: float = 50
+@export var damage_amount: int = 50
 @export var ghost_mask: int = 3
 
 @export var attack_sound: AudioStream = null
@@ -43,14 +43,11 @@ func attack(direction: float = 1.0) -> bool:
     beam_attack.fire(RANGE * direction)
     
     if result and result.collider:
-        var enemy_health: CharacterHealth = result.collider.get_node("HealthNode") as CharacterHealth
-        print_debug("Enemy hit")
-        if enemy_health:
-            enemy_health.take_damage(damage_amount)
+        if result.collider is Enemy:
+            var enemy_health: CharacterHealth = result.collider.get_node("HealthNode") as CharacterHealth
+            print_debug("Enemy hit")
+            if enemy_health:
+                enemy_health.take_damage(damage_amount)
 
     timer.start()
     return true
-
-# Just useless debug
-func _draw() -> void:
-    draw_line(origin, end, Color.RED, 4)
