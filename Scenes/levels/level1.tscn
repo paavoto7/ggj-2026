@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="4_o4am0"]
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="5_oyuyp"]
-[ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_txbhf"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_txbhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")

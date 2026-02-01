@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
 [ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
 [ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
+[ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
+[ext_resource type="Texture2D" uid="uid://c6l4u7jncc131" path="res://Assets/Images/Player/sydan.png" id="48_8eeqe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
 atlas = ExtResource("4_xuaoq")
@@ -1209,3 +1211,31 @@ one_shot = true
 
 [node name="StepSounds" type="AudioStreamPlayer2D" parent="." unique_id=133024254]
 stream = ExtResource("46_ax3m3")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1540475889]
+script = ExtResource("47_3vlem")
+
+[node name="Control" type="Control" parent="HUD" unique_id=1996054475]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/Control" unique_id=1055610651]
+position = Vector2(152.75, 115.75)
+scale = Vector2(10.03125, 10.03125)
+texture = ExtResource("48_8eeqe")
+
+[node name="Label" type="Label" parent="HUD/Control" unique_id=134740603]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 36.0
+offset_right = 151.25
+offset_bottom = 118.25
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
