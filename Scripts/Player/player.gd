@@ -8,7 +8,6 @@ class_name Player extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
-@onready var attack_ray: RayCast2D = $attack_ray as RayCast2D
 
 @onready var inventory: Inventory = $Inventory as Inventory
 
@@ -82,9 +81,6 @@ func _physics_process(delta: float) -> void:
         velocity.x = move_toward(velocity.x, 0, speed)
 
     if Input.is_action_just_pressed("attack"):
-        if attack_ray.is_colliding() and attack_ray.get_collider() is Enemy:
-            var enemy: Enemy = attack_ray.get_collider()
-            enemy.health.take_damage(50.0)
         attack_handler.attack(dir_sign)
 
     if is_on_floor() and direction == 0:
@@ -94,9 +90,6 @@ func _physics_process(delta: float) -> void:
             _play_anim("idle_right")
     
     if Input.is_action_just_pressed("attack"):
-        if attack_ray.is_colliding() and attack_ray.get_collider() is Enemy:
-            var enemy: Enemy = attack_ray.get_collider()
-            enemy.health.take_damage(50.0)
         attack_handler.attack(dir_sign)
     
     _apply_callables()

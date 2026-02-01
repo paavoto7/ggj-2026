@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://dx7l6436ohk47" path="res://Scripts/Player/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://dbw31hodfbaku" path="res://Assets/player.png" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://b0f25rysbfyag" path="res://Scripts/CharacterHealth.gd" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://b8wde7n3wtpf6" path="res://Assets/Audio/PriestDeathS.wav" id="3_r7t2e"]
 [ext_resource type="Texture2D" uid="uid://cum78r37jm36p" path="res://Assets/Images/Player/PriestJumpLeft.png" id="4_3smsa"]
+[ext_resource type="AudioStream" uid="uid://b172pteici586" path="res://Assets/Audio/PriestHurtS.wav" id="4_nmr2m"]
 [ext_resource type="Texture2D" uid="uid://chni4nqs5pmuh" path="res://Assets/Images/Player/priest_spritesheet.png" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://gqmx7xoots6r" path="res://Assets/Images/Player/PriestIdleLeft.png" id="4_xuaoq"]
 [ext_resource type="Texture2D" uid="uid://ct4klgtduqygr" path="res://Assets/Images/Player/PriestJumpRight.png" id="5_8erm5"]
@@ -42,6 +44,7 @@
 [ext_resource type="Texture2D" uid="uid://dwv7re4vnpuop" path="res://Assets/Images/Player/H5PriestJumpRight.png" id="34_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://bd2hphs5vei3t" path="res://Assets/Images/Player/H5PriestRunLeft.png" id="35_e6mvm"]
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
+[ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6mvm"]
 atlas = ExtResource("4_xuaoq")
@@ -1154,8 +1157,10 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_6t5aa")
 
-[node name="HealthNode" type="Node" parent="." unique_id=692960786]
+[node name="HealthNode" type="Node2D" parent="." unique_id=499971245]
 script = ExtResource("3_6t5aa")
+death_sound = ExtResource("3_r7t2e")
+hurt_sound = ExtResource("4_nmr2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1937993721]
 visible = false
@@ -1175,16 +1180,16 @@ shape = SubResource("CapsuleShape2D_gymyn")
 position = Vector2(10, -4)
 script = ExtResource("8_8erm5")
 RANGE = 200.0
+attack_sound = ExtResource("42_nmr2m")
+
+[node name="attack_ray" type="RayCast2D" parent="AttackOrigin" unique_id=1168460107]
+target_position = Vector2(400, 0)
 
 [node name="Cooldown" type="Timer" parent="AttackOrigin" unique_id=110001427]
 wait_time = 0.1
 one_shot = true
 
 [node name="BeamAttack" parent="AttackOrigin" unique_id=88917749 instance=ExtResource("9_f1ek2")]
-
-[node name="attack_ray" type="RayCast2D" parent="." unique_id=1168460107]
-position = Vector2(10, -4)
-target_position = Vector2(400, 0)
 
 [node name="detectionArea" type="Area2D" parent="." unique_id=1034731712]
 script = ExtResource("10_tx1dd")
