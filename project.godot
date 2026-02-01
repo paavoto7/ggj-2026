@@ -14,9 +14,12 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="ggj-2026"
+config/name="Priest's Holy Quest"
+config/description="GGJ 2026 (Finnish game jam)"
+config/version="0.1"
 run/main_scene="uid://i4budr6yn1pb"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0.17624316, 0.13747647, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]

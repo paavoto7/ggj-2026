@@ -1,7 +1,6 @@
-class_name GreenMask extends MaskItem
+class_name DesertMask extends MaskItem
 
 var callables: Array[Callable] = []
-
 
 func get_callables() -> Array[Callable]:
 	return callables
