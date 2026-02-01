@@ -21,7 +21,10 @@ func take_damage(amount: int) -> void:
 
 func _died() -> void:
     AudioManager.play_sfx_2d(death_sound, global_position)
-    if self.get_parent() is Player:
+
+    var parent := self.get_parent()
+    if parent is Player:
+        parent.should_update = false
         $"../GameOver".game_over()
     else:
-        get_parent().queue_free()
+        parent.queue_free()

@@ -20,7 +20,7 @@ func _ready() -> void:
     add_to_group("interactables")
 
 
-func interact(player: Player) -> void:
+func interact(_player: Player) -> void:
     AudioManager.play_sfx_2d(mask_pickup_sound, self.global_position)
 
     var scene_to_load: String = "res://Scenes/levels/level%d.tscn" % level_number
