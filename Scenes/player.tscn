@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
 [ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
 [ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
-[ext_resource type="Script" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
+[ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
 [ext_resource type="Texture2D" uid="uid://c6l4u7jncc131" path="res://Assets/Images/Player/sydan.png" id="48_8eeqe"]
 [ext_resource type="Script" uid="uid://b7hlcsexibmbx" path="res://Scripts/game_over.gd" id="49_5x828"]
 [ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Tiny5-Regular.ttf" id="50_c1k8q"]
@@ -1255,6 +1255,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GameOver" type="CanvasLayer" parent="." unique_id=139467605]
+visible = false
 script = ExtResource("49_5x828")
 
 [node name="Control" type="Control" parent="GameOver" unique_id=106332857]

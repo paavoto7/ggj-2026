@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c7t24wch7jtqg" path="res://Assets/Images/props/koriste_luuranko.png" id="7_gknfr"]
 [ext_resource type="Texture2D" uid="uid://blij0yav5fijh" path="res://Assets/Images/props/tombstone2.png" id="8_gknfr"]
 [ext_resource type="Texture2D" uid="uid://boxh1uado50fw" path="res://Assets/Images/props/tombstone.png" id="9_tft66"]
-[ext_resource type="Texture2D" uid="uid://bj550w2pc0cnj" path="res://Assets/Images/props/sprite_0.png" id="10_5vgkb"]
 [ext_resource type="Texture2D" uid="uid://clm70dxge7if5" path="res://Assets/Images/props/sprite_1.png" id="11_cxtv7"]
 [ext_resource type="Texture2D" uid="uid://irl82mg4ih2m" path="res://Assets/Images/props/sprite_2.png" id="12_j2hpf"]
+[ext_resource type="PackedScene" uid="uid://b33lnqhpohute" path="res://Scenes/Interactables/Tombstone.tscn" id="12_nmsip"]
 [ext_resource type="Texture2D" uid="uid://dhwu6877qflm4" path="res://Assets/Images/props/sprite_3.png" id="13_nmsip"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g2vr3"]
@@ -84,6 +84,7 @@ sources/3 = SubResource("TileSetAtlasSource_tft66")
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_0bt86")]
+position = Vector2(0, 24)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1780605461]
 position_smoothing_enabled = true
@@ -116,20 +117,34 @@ texture = ExtResource("8_gknfr")
 position = Vector2(-410.33334, 27.666668)
 texture = ExtResource("9_tft66")
 
-[node name="Sprite0" type="Sprite2D" parent="." unique_id=648265811]
+[node name="LevelTombstone1" parent="." unique_id=1221145921 instance=ExtResource("12_nmsip")]
 position = Vector2(-111.66666, 25.666668)
-texture = ExtResource("10_5vgkb")
+level_number = 1
 
-[node name="Sprite1" type="Sprite2D" parent="." unique_id=2073557692]
+[node name="LevelTombstone2" parent="." unique_id=472184686 instance=ExtResource("12_nmsip")]
 position = Vector2(118.66667, 24.666668)
 scale = Vector2(0.95833325, 1)
+level_number = 2
+
+[node name="Sprite0" parent="LevelTombstone2" index="0" unique_id=215085513]
 texture = ExtResource("11_cxtv7")
 flip_h = true
 
-[node name="Sprite2" type="Sprite2D" parent="." unique_id=266036254]
+[node name="LevelTombstone3" parent="." unique_id=2144316208 instance=ExtResource("12_nmsip")]
 position = Vector2(285, 25.333334)
+level_number = 3
+
+[node name="Sprite0" parent="LevelTombstone3" index="0" unique_id=215085513]
 texture = ExtResource("12_j2hpf")
 
-[node name="Sprite3" type="Sprite2D" parent="." unique_id=679654937]
+[node name="LevelTombstone4" parent="." unique_id=422471303 instance=ExtResource("12_nmsip")]
 position = Vector2(348.66666, 25)
+level_number = 4
+
+[node name="Sprite0" parent="LevelTombstone4" index="0" unique_id=215085513]
 texture = ExtResource("13_nmsip")
+
+[editable path="LevelTombstone1"]
+[editable path="LevelTombstone2"]
+[editable path="LevelTombstone3"]
+[editable path="LevelTombstone4"]

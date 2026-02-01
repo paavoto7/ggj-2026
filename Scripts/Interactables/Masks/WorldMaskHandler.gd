@@ -32,5 +32,4 @@ func interact(player: Player) -> void:
 
     AudioManager.play_sfx_2d(mask_pickup_sound, global_position)
 
-    print("Interacted")
     queue_free()
