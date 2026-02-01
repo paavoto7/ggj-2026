@@ -2,39 +2,45 @@ extends Area2D
 
 @export var max_val: Vector2 = Vector2.ZERO
 @export var min_val: Vector2 = Vector2.ZERO
-@export var movement_speed: float = 2
+@export var movement_speed: float = 80
 @export var damage_amount: float = 25
+@export var pause_time: float = 0.3
 
 @onready var floor_detector: RayCast2D = $FloorDetector as RayCast2D
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 
+var target: Vector2
+var pause_timer: float = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-    #add_to_group("interactables")
-    max_val.y = position.y
-    min_val.y = position.y
-    body_entered.connect(_on_body_enter)
-    pass
+	max_val.y = position.y
+	min_val.y = position.y
+	target = max_val
+	body_entered.connect(_on_body_enter)
 
-var elapsed_time: float = 0
 func _physics_process(delta: float) -> void:
-    # Just copying from worldmask
-    elapsed_time += delta * movement_speed
-    var t: float = (sin(elapsed_time) + 1.0) * 0.5 # converts -1..1 → 0..1
-    var value: Vector2 = lerp(min_val, max_val, t)
-    position = value
+	if pause_timer > 0:
+		pause_timer -= delta
+		return
 
-    if not floor_detector.is_colliding():
-        position.x *= -1;
-        anim_sprite.scale.x *= -0.8
+	var dir: Vector2 = (target - position)
+	var dist: float = dir.length()
 
+	if dist <= movement_speed * delta:
+		position = target
+		target = min_val if target == max_val else max_val
+		pause_timer = pause_time
+		anim_sprite.scale.x *= -1
+	else:
+		position += dir.normalized() * movement_speed * delta
 
 func _on_body_enter(body: CharacterBody2D) -> void:
-    # Remove from current parent before adding to inventory
-    
-    if body is not Player:
-        return
-    print("Hedgehod did damage")
-    
-    body.get_node("HealthNode").take_damage(damage_amount)
-    
+	# Remove from current parent before adding to inventory
+	
+	if body is not Player:
+		return
+	print("Hedgehod did damage")
+	
+	body.get_node("HealthNode").take_damage(damage_amount)
+	
