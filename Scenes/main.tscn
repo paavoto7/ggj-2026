@@ -49,16 +49,7 @@ size_flags_horizontal = 4
 text = "Heaven"
 
 [connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game2" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start Game2" to="." method="_on_start_game_2_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game3" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game3" to="." method="_on_start_game_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start Game3" to="." method="_on_start_game_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game4" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game4" to="." method="_on_start_game_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start Game4" to="." method="_on_start_game_4_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game4" to="." method="_on_start_game_3_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game5" to="." method="_on_start_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game5" to="." method="_on_start_game_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Start Game5" to="." method="_on_start_game_5_pressed"]
-[connection signal="pressed" from="VBoxContainer/Start Game5" to="." method="_on_start_game_3_pressed"]
