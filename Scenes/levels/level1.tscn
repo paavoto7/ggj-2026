@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="5_oyuyp"]
 [ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="8_jfump"]
+[ext_resource type="Script" uid="uid://bdhg0itcvodfh" path="res://Scripts/Interactables/Masks/MaskInstances/ForestMask.gd" id="8_jfump"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_txbhf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
@@ -248,7 +249,6 @@ sources/3 = SubResource("TileSetAtlasSource_txbhf")
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_skpnj")]
-position = Vector2(4790.667, 152.66667)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 position_smoothing_enabled = true
@@ -267,6 +267,8 @@ position = Vector2(2619, 91.666664)
 
 [node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("8_jfump")]
 position = Vector2(0, 657.3334)
+[node name="MaskItem" parent="Mask" index="2" unique_id=443979748]
+script = ExtResource("8_jfump")
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("8_txbhf")]
 position = Vector2(38.333344, -37.33333)
@@ -279,3 +281,5 @@ position = Vector2(95.198, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
 position = Vector2(-59.497, 0)
+
+[editable path="Mask"]
