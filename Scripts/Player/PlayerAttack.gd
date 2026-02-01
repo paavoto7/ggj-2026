@@ -28,7 +28,7 @@ func attack(direction: float = 1.0) -> bool:
 
     if attack_ray.is_colliding() and attack_ray.get_collider() is Enemy:
         var enemy: Enemy = attack_ray.get_collider()
-        enemy.health.take_damage(50.0)
+        enemy.health.take_damage(damage_amount)
     
     AudioManager.play_sfx_2d(attack_sound, global_position)
     
@@ -45,7 +45,6 @@ func attack(direction: float = 1.0) -> bool:
     if result and result.collider:
         if result.collider is Enemy:
             var enemy_health: CharacterHealth = result.collider.get_node("HealthNode") as CharacterHealth
-            print_debug("Enemy hit")
             if enemy_health:
                 enemy_health.take_damage(damage_amount)
 
