@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="5_oyuyp"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_txbhf"]
+[ext_resource type="Texture2D" uid="uid://cxoi25v3dpb6x" path="res://Assets/Images/lvl1_parallax/ColouredBG2_1.png" id="9_1p2rh"]
+[ext_resource type="Texture2D" uid="uid://doh6ubjjo2qkm" path="res://Assets/Images/lvl1_parallax/sprite_1.png" id="10_wrykp"]
+[ext_resource type="Texture2D" uid="uid://wf7ernugc5jg" path="res://Assets/Images/lvl1_parallax/sprite_3.png" id="11_qnnww"]
+[ext_resource type="Texture2D" uid="uid://b4ivmrv6qb5rq" path="res://Assets/Images/lvl1_parallax/sprite_4.png" id="12_4hiyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")
@@ -247,7 +251,7 @@ sources/3 = SubResource("TileSetAtlasSource_txbhf")
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_skpnj")]
-position = Vector2(4790.667, 152.66667)
+position = Vector2(44.333008, -16.666672)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 position_smoothing_enabled = true
@@ -275,3 +279,51 @@ position = Vector2(95.198, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
 position = Vector2(-59.497, 0)
+
+[node name="Background" type="Node" parent="." unique_id=1460628957]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=25111177]
+scroll_scale = Vector2(0.1, 0)
+scroll_offset = Vector2(0, -571)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=820152214]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("9_1p2rh")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=709172655]
+scroll_scale = Vector2(0.4, 0)
+scroll_offset = Vector2(0, -571)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=308395348]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("10_wrykp")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=1860999849]
+scroll_scale = Vector2(0.8, 0)
+scroll_offset = Vector2(0, -571)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=352272308]
+z_index = -1
+position = Vector2(6411, 160)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("11_qnnww")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=2038370032]
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -568)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1899918887]
+z_index = -1
+position = Vector2(6419, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("12_4hiyj")

@@ -2,9 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_sjedw"]
 [ext_resource type="Texture2D" uid="uid://4y55slichqsr" path="res://Assets/Images/Tilemap/Winter_lopullinen_KYSYMYSMERKKI.png" id="2_w7nad"]
+[ext_resource type="Texture2D" uid="uid://4clm125neb6r" path="res://Assets/Images/lvl2_parallax/sprite_0.png" id="6_wqqg4"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="6_y05r8"]
+[ext_resource type="Texture2D" uid="uid://chmudf1d4ty3a" path="res://Assets/Images/lvl2_parallax/sprite_1.png" id="7_4wxk4"]
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="7_oh6hf"]
+[ext_resource type="Texture2D" uid="uid://dtdnqyjusddwm" path="res://Assets/Images/lvl2_parallax/sprite_2.png" id="8_fg74y"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_pjwhy"]
+[ext_resource type="Texture2D" uid="uid://vdh24o42gru8" path="res://Assets/Images/lvl2_parallax/sprite_3.png" id="9_y05r8"]
+[ext_resource type="Texture2D" uid="uid://bpn7fanb2neoa" path="res://Assets/Images/lvl2_parallax/sprite_4.png" id="10_oh6hf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t033"]
 texture = ExtResource("2_w7nad")
@@ -119,3 +124,62 @@ position = Vector2(95.198, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
 position = Vector2(-59.497, 0)
+
+[node name="Background" type="Node" parent="." unique_id=1658148832]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=2000797952]
+scroll_scale = Vector2(0.1, 0)
+scroll_offset = Vector2(0, -403)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1886559750]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("6_wqqg4")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1456683892]
+scroll_scale = Vector2(0.4, 0)
+scroll_offset = Vector2(0, -403)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=330532927]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("7_4wxk4")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=269957306]
+scroll_scale = Vector2(0.8, 0)
+scroll_offset = Vector2(0, -403)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=1497239216]
+z_index = -1
+position = Vector2(6411, 160)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("8_fg74y")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1870430461]
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -400)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1555465947]
+z_index = -1
+position = Vector2(6419, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("9_y05r8")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Background" unique_id=711427722]
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -400)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5" unique_id=787576369]
+z_index = -1
+position = Vector2(6419, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("10_oh6hf")

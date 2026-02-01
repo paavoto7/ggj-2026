@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_5rtj3"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
 [ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_n7m84"]
+[ext_resource type="Texture2D" uid="uid://csokba0te30dg" path="res://Assets/Images/lvl4_parallax/sprite_0.png" id="8_r4q1w"]
+[ext_resource type="Texture2D" uid="uid://dkx6lyjmw1hk5" path="res://Assets/Images/lvl4_parallax/sprite_1.png" id="9_ryc53"]
+[ext_resource type="Texture2D" uid="uid://c1sfknc52bgiq" path="res://Assets/Images/lvl4_parallax/sprite_2.png" id="10_vqu04"]
+[ext_resource type="Texture2D" uid="uid://cufy8o5dckyba" path="res://Assets/Images/lvl4_parallax/sprite_3.png" id="11_ktrwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7m84"]
 texture = ExtResource("2_ofi80")
@@ -144,3 +148,51 @@ position = Vector2(1802.3334, -25.333336)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PingPongEnemy/AnimatableBody2D" unique_id=1431474345]
 libraries/ = SubResource("AnimationLibrary_ia2ng")
 autoplay = &"move"
+
+[node name="Background" type="Node" parent="." unique_id=1599437335]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=830175549]
+scroll_scale = Vector2(0.1, 0)
+scroll_offset = Vector2(0, -659)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1883882656]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("8_r4q1w")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=48734908]
+scroll_scale = Vector2(0.4, 0)
+scroll_offset = Vector2(0, -659)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=1092045370]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("9_ryc53")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=2092224130]
+scroll_scale = Vector2(0.8, 0)
+scroll_offset = Vector2(0, -659)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=1497668395]
+z_index = -1
+position = Vector2(6411, 160)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("10_vqu04")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1891376211]
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -656)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=998996991]
+z_index = -1
+position = Vector2(6419, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("11_ktrwh")
