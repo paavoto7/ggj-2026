@@ -25,9 +25,9 @@ func interact(player: Player) -> void:
     mask_item.get_parent().remove_child(mask_item)
 
     # Add to player's inventory
+    player.inventory.add_child(mask_item)
     player.inventory.add_item(mask_item)
     player.inventory.apply_mask(mask_item)
-    player.inventory.add_child(mask_item)
 
     print("Interacted")
     queue_free()

@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_ofi80"]
 [ext_resource type="Texture2D" uid="uid://c56ig3a360lxs" path="res://Assets/Images/Tilemap/tileset_sand.png" id="2_ofi80"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_ia2ng"]
-[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_5rtj3"]
+[ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_ia2ng"]
+[ext_resource type="Texture2D" uid="uid://hmdu4x3bpbvi" path="res://Assets/Images/Masks/H3Rotating.png" id="5_5rtj3"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
+[ext_resource type="Script" uid="uid://ymxaj0ps2nld" path="res://Scripts/Interactables/Masks/MaskInstances/DesertMask.gd" id="6_ia2ng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7m84"]
 texture = ExtResource("2_ofi80")
@@ -45,6 +47,73 @@ texture = ExtResource("2_ofi80")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n7m84")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xgtr"]
+size = Vector2(48, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i4wi"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4q1w"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryc53"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqu04"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktrwh"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ls1f"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlubj"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgki2"]
+atlas = ExtResource("5_5rtj3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnhy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i4wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4q1w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryc53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqu04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktrwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ls1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlubj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgki2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [node name="Node2D" type="Node2D" unique_id=259014528]
 scale = Vector2(3, 3)
 
@@ -61,8 +130,20 @@ tile_set = SubResource("TileSet_hh7mx")
 position = Vector2(-78.66667, -56)
 CHASE_SPEED = 300.0
 
-[node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_5rtj3")]
+[node name="Mask" type="Area2D" parent="." unique_id=2051030919 groups=["interactables"]]
 position = Vector2(684.6667, -49.333332)
+script = ExtResource("4_ia2ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask" unique_id=10988267]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_2xgtr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=1728194619]
+sprite_frames = SubResource("SpriteFrames_tnhy0")
+autoplay = "default"
+
+[node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
+script = ExtResource("6_ia2ng")
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_mrlvs")]
 position = Vector2(128.66667, -26)

@@ -1,19 +1,25 @@
-class_name ForestMask extends MaskItem
+class_name IceMask extends MaskItem
 
 var callables: Array[Callable] = []
-
-const time_scale_factor: int =  2
 
 
 func get_callables() -> Array[Callable]:
     return callables
 
+var playerHealth: CharacterHealth
+var oldMaxHealth: int
+
 func set_static_effects():
-    Engine.time_scale *= time_scale_factor
+    playerHealth = get_tree().get_first_node_in_group("player").get_node("HealthNode") as CharacterHealth
+    oldMaxHealth = playerHealth.MAX_HEALTH
+    playerHealth.MAX_HEALTH = 1
+    playerHealth.health = 1
+    
     print("Set static effects")
 
 func unset_static_effects():
-    Engine.time_scale /= time_scale_factor
+    playerHealth.MAX_HEALTH = oldMaxHealth
+    playerHealth.health = oldMaxHealth
     print("Unset static effects")
 
 func _ready() -> void:
