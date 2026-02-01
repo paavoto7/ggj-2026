@@ -5,6 +5,9 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
     AudioManager.play_music(background_music)
-    pass # Replace with function body.
 
+func pause_game():
+    get_tree().paused = true
 
+func resume_game():
+    get_tree().paused = false
