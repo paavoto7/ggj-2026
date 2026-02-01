@@ -113,6 +113,43 @@ animations = [{
 "name": &"default",
 "speed": 12.0
 }]
+[sub_resource type="Animation" id="Animation_ia2ng"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1802.3334, -25.333336)]
+}
+
+[sub_resource type="Animation" id="Animation_n7m84"]
+resource_name = "move"
+length = 2.0333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1589, -25.333336), Vector2(1802.3334, -25.333336)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ia2ng"]
+_data = {
+&"RESET": SubResource("Animation_ia2ng"),
+&"move": SubResource("Animation_n7m84")
+}
 
 [node name="Node2D" type="Node2D" unique_id=259014528]
 scale = Vector2(3, 3)
@@ -156,3 +193,10 @@ position = Vector2(-29.666668, 0)
 
 [node name="Node2D2" type="Node2D" parent="PingPongEnemy" unique_id=1463515027]
 position = Vector2(31.197998, 0)
+
+[node name="AnimatableBody2D" parent="PingPongEnemy" unique_id=581830580 instance=ExtResource("6_n7m84")]
+position = Vector2(1802.3334, -25.333336)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PingPongEnemy/AnimatableBody2D" unique_id=1431474345]
+libraries/ = SubResource("AnimationLibrary_ia2ng")
+autoplay = &"move"

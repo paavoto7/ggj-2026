@@ -4,6 +4,7 @@ class_name WorldMask extends Area2D
 @export var min_val: float = -1
 @export var hover_speed: float = 2
 
+@export var mask_pickup_sound: AudioStream = preload("res://Assets/Audio/MaskPickUpS.wav")
 
 @onready var mask_item: MaskItem = $MaskItem as MaskItem
 
@@ -28,6 +29,8 @@ func interact(player: Player) -> void:
     player.inventory.add_child(mask_item)
     player.inventory.add_item(mask_item)
     player.inventory.apply_mask(mask_item)
+
+    AudioManager.play_sfx_2d(mask_pickup_sound, global_position)
 
     print("Interacted")
     queue_free()

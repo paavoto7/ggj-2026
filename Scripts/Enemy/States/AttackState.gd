@@ -56,6 +56,7 @@ func on_update(delta: float):
         controller.animated_sprite.play(animation)
     
     if distance_to_player < controller.attack_distance and controller.attack_speed < elapsed_attack and player_health:
+        # Audiomanaget play
         player_health.take_damage(controller.damage_amount)
         elapsed_attack = 0
     

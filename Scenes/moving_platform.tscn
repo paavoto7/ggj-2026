@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ck44a2ioh005x"]
+
+[ext_resource type="Texture2D" uid="uid://c56ig3a360lxs" path="res://Assets/Images/Tilemap/tileset_sand.png" id="1_vvyo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
+size = Vector2(32, 13)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=581830580]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1193093151]
+texture = ExtResource("1_vvyo4")
+region_enabled = true
+region_rect = Rect2(0.8556919, 47.833107, 31.232965, 13.290623)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1044799795]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_anqd2")
