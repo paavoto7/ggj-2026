@@ -26,7 +26,6 @@ func play_music(stream: AudioStream, loop := true) -> void:
 
     music_player.stop()
     music_player.stream = stream
-    music_player.loop = loop
     music_player.play()
 
 func stop_music() -> void:
@@ -37,13 +36,19 @@ func play_ui(stream: AudioStream) -> void:
     ui_player.stream = stream
     ui_player.play()
 
+var asplayer: AudioStreamPlayer2D
+
 # World SFX
 func play_sfx_2d(stream: AudioStream, pos: Vector2, volume_db := 0.0) -> void:
     if stream == null:
         return
     
-    # We should pool these or recycle even one, but crunch disagrees
-    var p: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+    if asplayer == null:
+        asplayer = AudioStreamPlayer2D.new()
+
+    # Need to pool these, but quick and dirty minor optimisation
+    var p: AudioStreamPlayer2D = AudioStreamPlayer2D.new() if asplayer.playing else asplayer
+
     p.stream = stream
     p.bus = sfx_bus
     p.global_position = pos

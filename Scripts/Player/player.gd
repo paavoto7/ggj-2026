@@ -6,6 +6,8 @@ class_name Player extends CharacterBody2D
 @export var coyote_time: float = 0.1
 @export var jump_buffer_time: float = 0.1
 
+@onready var steps_sound: AudioStreamPlayer2D = $StepSounds
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
 
@@ -66,6 +68,8 @@ func _physics_process(delta: float) -> void:
     direction = Input.get_axis("move_left", "move_right")
     if direction:
         velocity.x = direction * speed
+        if !steps_sound.playing:
+            steps_sound.play()
 
         if direction < 0:
             _play_anim("walk_left")

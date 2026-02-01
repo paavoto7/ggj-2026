@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 AudioManager="*uid://c2ny0aymkci5a"
+MainManager="*uid://cedp8fcdjjmol"
 
 [display]
 
