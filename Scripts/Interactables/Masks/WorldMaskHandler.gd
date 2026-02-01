@@ -1,7 +1,7 @@
 class_name WorldMask extends Area2D
 
-@export var max_val: float = 1
-@export var min_val: float = -1
+@export var max_val: float = .25
+@export var min_val: float = -.25
 @export var hover_speed: float = 2
 
 @export var mask_pickup_sound: AudioStream = preload("res://Assets/Audio/MaskPickUpS.wav")

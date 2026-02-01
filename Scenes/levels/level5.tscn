@@ -113,7 +113,7 @@ position = Vector2(0, -75.245)
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_332hv")]
 position = Vector2(38.333344, -37.33333)
 max_val = Vector2(53.333294, 0)
-min_val = Vector2(-291.66672, 0)
+min_val = Vector2(-50, 0)
 movement_speed = 1.0
 
 [node name="Node2D" type="Node2D" parent="PingPongEnemy" unique_id=463877906]
