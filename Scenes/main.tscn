@@ -78,6 +78,23 @@ autowrap_trim_flags = 0
 clip_text = true
 icon_alignment = 1
 
+[node name="Start Game2" type="Button" parent="Control" unique_id=1836099513]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 429.0
+offset_right = 198.0
+offset_bottom = 453.0
+scale = Vector2(8.285, 4.143)
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_21xkr")
+theme_override_font_sizes/font_size = 6
+icon = SubResource("AtlasTexture_21xkr")
+flat = true
+autowrap_trim_flags = 0
+clip_text = true
+icon_alignment = 1
+
 [node name="Label" type="Label" parent="Control" unique_id=1790039380]
 layout_mode = 0
 offset_left = 250.0
@@ -87,6 +104,16 @@ offset_bottom = 416.0
 theme_override_fonts/font = ExtResource("3_21xkr")
 theme_override_font_sizes/font_size = 31
 text = "Start Game"
+
+[node name="Label3" type="Label" parent="Control" unique_id=1475866484]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 456.0
+offset_right = 401.0
+offset_bottom = 492.0
+theme_override_fonts/font = ExtResource("3_21xkr")
+theme_override_font_sizes/font_size = 31
+text = "Quit game"
 
 [node name="Label2" type="Label" parent="Control" unique_id=272500626]
 layout_mode = 0
@@ -99,3 +126,4 @@ theme_override_font_sizes/font_size = 128
 text = "Priest's Holy Quest"
 
 [connection signal="pressed" from="Control/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Control/Start Game2" to="." method="_on_quit_game_pressed"]
