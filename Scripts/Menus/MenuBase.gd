@@ -8,8 +8,4 @@ func _enter_tree() -> void:
 
 func _on_visibility_changed() -> void:
     # Hides cursor when in gameplay view
-    match Input.mouse_mode:
-        Input.MOUSE_MODE_VISIBLE:
-            Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
-        Input.MOUSE_MODE_HIDDEN:
-            Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+    Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if self.visible else Input.MOUSE_MODE_HIDDEN
