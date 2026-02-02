@@ -20,7 +20,7 @@ func _ready() -> void:
 	add_child(ui_player)
 
 # Music player
-func play_music(stream: AudioStream, loop := true) -> void:
+func play_music(stream: AudioStream) -> void:
 	if music_player.stream == stream and music_player.playing:
 		return
 

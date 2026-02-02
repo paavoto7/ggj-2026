@@ -12,6 +12,7 @@ class_name Player extends CharacterBody2D
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
 
 @onready var inventory: Inventory = $Inventory as Inventory
+@onready var health: CharacterHealth = $HealthNode as CharacterHealth
 
 @onready var jump_timer: Timer = $JumpTimer as Timer
 
@@ -27,6 +28,9 @@ var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
 
 var should_update: bool = true
+
+func _ready() -> void:
+    health.character_died.connect(_handle_death)
 
 func _physics_process(delta: float) -> void:
     if Input.is_action_just_pressed("pause_menu"):
@@ -119,3 +123,7 @@ func _apply_callables() -> void:
 
     for callable in inventory.currentMask.get_callables():
         callable.call(self)
+
+func _handle_death():
+    should_update = false
+    $GameOver.game_over()

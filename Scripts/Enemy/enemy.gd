@@ -8,7 +8,7 @@ enum State {
 @export var WALK_SPEED: float = 400.0
 @export var CHASE_SPEED: float = 800.0
 
-@export var damage_amount: float = 25
+@export var damage_amount: int = 25
 @export var attack_distance: float = 200
 @export var attack_speed: float = 2
 
@@ -30,6 +30,8 @@ func _ready() -> void:
 	state_machine.initialize_with_state(idle)
 	state_machine.add_state(attack)
 
+	health.character_died.connect(_handle_death)
+
 func _physics_process(delta: float) -> void:
 	state_machine.update(delta)
 
@@ -49,3 +51,6 @@ func get_animation() -> StringName:
 	else: # Death
 		new_animation = &"destroy"
 	return new_animation
+
+func _handle_death():
+	self.queue_free()
