@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_v6amx"]
 [ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_a4sp7"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_73dj2"]
-[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="6_df4gu"]
+[ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_df4gu"]
+[ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="7_9dkee"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df4gu"]
 texture = ExtResource("2_5vxev")
@@ -433,7 +434,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_v6amx")
 autoplay = &"move8"
 
-[node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("6_df4gu")]
+[node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("7_9dkee")]
 position = Vector2(0, -281.33337)
 
 [editable path="AnimatableBody2D"]
