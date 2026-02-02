@@ -47,7 +47,7 @@
 [ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
 [ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
 [ext_resource type="Texture2D" uid="uid://c6l4u7jncc131" path="res://Assets/Images/Player/sydan.png" id="48_8eeqe"]
-[ext_resource type="Script" uid="uid://b7hlcsexibmbx" path="res://Scripts/game_over.gd" id="49_5x828"]
+[ext_resource type="Script" uid="uid://b7hlcsexibmbx" path="res://Scripts/Menus/game_over.gd" id="49_5x828"]
 [ext_resource type="FontFile" uid="uid://dblnmp8i2xalr" path="res://Assets/Fonts/Tiny5-Regular.ttf" id="50_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://dxccpoi7gpyqd" path="res://Assets/Images/gameover_tausta.png" id="51_e6mvm"]
 [ext_resource type="Texture2D" uid="uid://cuuabtso1mi73" path="res://Assets/Images/KIVInapis.png" id="52_57lvd"]

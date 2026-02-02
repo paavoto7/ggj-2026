@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://i4budr6yn1pb"]
 
-[ext_resource type="Script" uid="uid://do6oebix1rkbi" path="res://Scripts/main_menu.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://do6oebix1rkbi" path="res://Scripts/Menus/main_menu.gd" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://cg6ktv223su6i" path="res://Assets/Images/KIRKKI.png" id="2_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://cuuabtso1mi73" path="res://Assets/Images/KIVInapis.png" id="2_kry3j"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="3_8gbba"]
@@ -38,28 +38,30 @@ sources/1 = SubResource("TileSetAtlasSource_kry3j")
 atlas = ExtResource("2_kry3j")
 region = Rect2(0, 0, 32, 16)
 
-[node name="Main menu" type="Control" unique_id=188194463]
+[node name="Main menu" type="CanvasLayer" unique_id=1984143974]
+script = ExtResource("1_jjgbg")
+
+[node name="Control" type="Control" parent="." unique_id=1274151270]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jjgbg")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=2053757881]
+[node name="Node2D" type="Node2D" parent="Control" unique_id=2053757881]
 scale = Vector2(4, 4)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=260159556]
+[node name="TileMapLayer" type="TileMapLayer" parent="Control/Node2D" unique_id=260159556]
 tile_map_data = PackedByteArray("AAAAAAkAAAABAAEAAAABAAkAAAABAAAAAAACAAkAAAABAAEAAAADAAkAAAABAAEAAAAEAAkAAAADAAAAAAAFAAkAAAADAAAAAAAGAAkAAAABAAEAAAAHAAkAAAABAAEAAAAIAAkAAAADAAEAAAAJAAkAAAABAAAAAAAKAAkAAAABAAEAAAALAAkAAAABAAAAAAAMAAkAAAADAAAAAAANAAkAAAABAAEAAAAOAAkAAAADAAEAAAAPAAkAAAADAAAAAAAQAAkAAAABAAEAAAARAAkAAAADAAAAAAASAAkAAAABAAEAAAATAAkAAAABAAEAAAAAAAoAAQAEAAEAAAABAAoAAQAEAAEAAAACAAoAAQAEAAEAAAADAAoAAQAEAAEAAAAEAAoAAQAEAAQAAAAFAAoAAQAEAAEAAAAGAAoAAQAEAAEAAAAHAAoAAQAEAAEAAAAIAAoAAQAEAAEAAAAJAAoAAQAEAAEAAAAKAAoAAQAEAAEAAAALAAoAAQAEAAEAAAAMAAoAAQAEAAEAAAANAAoAAQAEAAEAAAAOAAoAAQAEAAEAAAAPAAoAAQAEAAEAAAAQAAoAAQAEAAEAAAARAAoAAQABAAQAAAASAAoAAQAEAAEAAAATAAoAAQAEAAEAAAATAAsAAQAEAAEAAAASAAsAAQAEAAEAAAARAAsAAQAEAAEAAAAQAAsAAQAEAAEAAAAPAAsAAQAEAAEAAAAOAAsAAQAEAAEAAAANAAsAAQAEAAEAAAAMAAsAAQAEAAEAAAAJAAsAAQAEAAEAAAAIAAsAAQAEAAEAAAAHAAsAAQAEAAEAAAAGAAsAAQAEAAEAAAAFAAsAAQAEAAEAAAAEAAsAAQAEAAEAAAADAAsAAQAEAAEAAAACAAsAAQAEAAEAAAABAAsAAQAEAAEAAAAAAAsAAQABAAQAAAAKAAsAAQAEAAQAAAALAAsAAQABAAQAAAA=")
 tile_set = SubResource("TileSet_kry3j")
 
-[node name="Kirkki" type="Sprite2D" parent="Node2D" unique_id=1444056179]
+[node name="Kirkki" type="Sprite2D" parent="Control/Node2D" unique_id=1444056179]
 position = Vector2(262, 99.74999)
 scale = Vector2(0.7402344, 0.69921875)
 texture = ExtResource("2_bo1nx")
 
-[node name="Start Game" type="Button" parent="." unique_id=855084759]
+[node name="Start Game" type="Button" parent="Control" unique_id=855084759]
 layout_mode = 0
 offset_left = 158.0
 offset_top = 351.0
@@ -76,7 +78,7 @@ autowrap_trim_flags = 0
 clip_text = true
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="." unique_id=1790039380]
+[node name="Label" type="Label" parent="Control" unique_id=1790039380]
 layout_mode = 0
 offset_left = 250.0
 offset_top = 380.0
@@ -86,7 +88,7 @@ theme_override_fonts/font = ExtResource("3_21xkr")
 theme_override_font_sizes/font_size = 31
 text = "Start Game"
 
-[node name="Label2" type="Label" parent="." unique_id=272500626]
+[node name="Label2" type="Label" parent="Control" unique_id=272500626]
 layout_mode = 0
 offset_left = 72.0
 offset_top = 70.0
@@ -96,4 +98,4 @@ theme_override_fonts/font = ExtResource("3_21xkr")
 theme_override_font_sizes/font_size = 128
 text = "Priest's Holy Quest"
 
-[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Control/Start Game" to="." method="_on_start_game_pressed"]

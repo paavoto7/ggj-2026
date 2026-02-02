@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends MenuBase
 
 func _ready():
     self.hide()
@@ -14,4 +14,3 @@ func _on_hub_pressed() -> void:
     
 func game_over():
     self.show()
-
