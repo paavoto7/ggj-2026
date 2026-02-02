@@ -1,9 +1,10 @@
 class_name WorldMask extends Area2D
 
-@export var max_val: float = 1
-@export var min_val: float = -1
+@export var max_val: float = .25
+@export var min_val: float = -.25
 @export var hover_speed: float = 2
 
+@export var mask_pickup_sound: AudioStream = preload("res://Assets/Audio/MaskPickUpS.wav")
 
 @onready var mask_item: MaskItem = $MaskItem as MaskItem
 
@@ -25,9 +26,10 @@ func interact(player: Player) -> void:
     mask_item.get_parent().remove_child(mask_item)
 
     # Add to player's inventory
+    player.inventory.add_child(mask_item)
     player.inventory.add_item(mask_item)
     player.inventory.apply_mask(mask_item)
-    player.inventory.add_child(mask_item)
 
-    print("Interacted")
+    AudioManager.play_sfx_2d(mask_pickup_sound, global_position)
+
     queue_free()

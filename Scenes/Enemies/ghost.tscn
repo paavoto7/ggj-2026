@@ -88,8 +88,9 @@ collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_mselb")
 
-[node name="HealthNode" type="Node" parent="." unique_id=450267669]
+[node name="HealthNode" type="Node2D" parent="." unique_id=2053238891]
 script = ExtResource("5_lsagp")
+MAX_HEALTH = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856874743]
 sprite_frames = SubResource("SpriteFrames_urtqy")
@@ -97,6 +98,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="detectionArea" type="Area2D" parent="." unique_id=1843856040]
+position = Vector2(-1, 0)
 script = ExtResource("3_cpcs7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionArea" unique_id=1273467561]
@@ -111,5 +113,4 @@ script = ExtResource("3_6lnoi")
 
 [node name="FloorDetector" type="RayCast2D" parent="." unique_id=211741197]
 
-[connection signal="area_entered" from="detectionArea" to="detectionArea" method="_on_area_entered"]
 [connection signal="body_entered" from="detectionArea" to="detectionArea" method="_on_body_entered"]

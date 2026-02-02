@@ -2,8 +2,15 @@ class_name GreenMask extends MaskItem
 
 var callables: Array[Callable] = []
 
+
 func get_callables() -> Array[Callable]:
 	return callables
+
+func set_static_effects():
+	print("Set static effects")
+
+func unset_static_effects():
+	print("Unset static effects")
 
 var has_double_jumped: bool = false
 

@@ -36,3 +36,5 @@ RAW_ASSETS/
 *.psd
 *.blend
 *.aep
+
+Build/

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cg10u58t3h7x0"]
+
+[ext_resource type="Script" uid="uid://cieouj42sugqs" path="res://Scripts/WorldFloorHandler.gd" id="1_y30u3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_txbhf"]
+distance = -138.0
+
+[node name="WorldFloor" type="StaticBody2D" unique_id=898512442]
+script = ExtResource("1_y30u3")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1062058994]
+visible = false
+position = Vector2(0, 435.33334)
+shape = SubResource("WorldBoundaryShape2D_txbhf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=762938492]
+position = Vector2(0, 435.33334)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1019202653]
+position = Vector2(0, -38.333344)
+shape = SubResource("WorldBoundaryShape2D_txbhf")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

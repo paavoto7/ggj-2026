@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ba1cuqhqrk4u7"]
+
+[ext_resource type="Script" uid="uid://dowpu2le27xc2" path="res://Scripts/Enemy/pingpongenemy.gd" id="1_2apki"]
+[ext_resource type="Texture2D" uid="uid://d3nyyq54cklj7" path="res://Assets/Images/Enemy/hedgehogg.png" id="1_8e3o2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2apki"]
+size = Vector2(27, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfaj2"]
+atlas = ExtResource("1_8e3o2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utn75"]
+atlas = ExtResource("1_8e3o2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw4w0"]
+atlas = ExtResource("1_8e3o2")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxx14"]
+atlas = ExtResource("1_8e3o2")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i7wor"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfaj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utn75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw4w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxx14")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[node name="PingPongEnemy" type="Area2D" unique_id=385219625]
+script = ExtResource("1_2apki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1342748080]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_2apki")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=75465083]
+sprite_frames = SubResource("SpriteFrames_i7wor")
+animation = &"move"
+
+[node name="FloorDetector" type="RayCast2D" parent="." unique_id=622934544]
