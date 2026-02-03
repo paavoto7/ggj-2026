@@ -1,11 +1,5 @@
 class_name IceMask extends MaskItem
 
-var callables: Array[Callable] = []
-
-
-func get_callables() -> Array[Callable]:
-    return callables
-
 var playerHealth: CharacterHealth
 var oldMaxHealth: int
 
@@ -22,7 +16,3 @@ func unset_static_effects():
     playerHealth.health = oldMaxHealth
     print("Unset static effects")
 
-func _ready() -> void:
-    for method in get_method_list():
-        if method.name.begins_with("callable"):
-            callables.append(Callable(self, method.name))
