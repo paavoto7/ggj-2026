@@ -1157,11 +1157,11 @@ radius = 8.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
 size = Vector2(48, 46)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x828"]
-bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.18431373)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6mvm"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 0.8784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5x828"]
+bg_color = Color(0.20392157, 0.20392157, 0.20392157, 0.18431373)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0gchq"]
 atlas = ExtResource("52_57lvd")
@@ -1245,6 +1245,39 @@ offset_bottom = 159.25
 theme_override_fonts/font = ExtResource("50_c1k8q")
 theme_override_font_sizes/font_size = 64
 text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractionPrompt" type="Panel" parent="HUD/Control" unique_id=2122412199]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.0
+offset_top = -244.0
+offset_right = 155.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6mvm")
+
+[node name="Label" type="Label" parent="HUD/Control/InteractionPrompt" unique_id=111029472]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 30
+text = "Press E to interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
