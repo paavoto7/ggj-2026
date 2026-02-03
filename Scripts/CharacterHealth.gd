@@ -19,6 +19,15 @@ func take_damage(amount: int) -> void:
     else:
         AudioManager.play_sfx_2d(hurt_sound, global_position)
 
+func give_health(amount: int):
+    health += amount
+
+    if health > MAX_HEALTH:
+        health = MAX_HEALTH
+    
+    health_changed.emit(health)
+    #AudioManager.play_sfx_2d(health_sound, global_position)
+
 func _died() -> void:
     AudioManager.play_sfx_2d(death_sound, global_position)
 
