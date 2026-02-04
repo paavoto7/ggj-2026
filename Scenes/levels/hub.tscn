@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cfwvl2iryup7s"]
 
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_0bt86"]
+[ext_resource type="Script" uid="uid://ddm8pkawc0p4q" path="res://Scripts/Levels/Hub.gd" id="1_cxtv7"]
 [ext_resource type="Texture2D" uid="uid://bka6txcv4jauo" path="res://Assets/Images/Tilemap/Forest/multaa_Taas.png" id="2_shyja"]
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="3_su5tn"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="4_ki1d8"]
@@ -82,6 +83,7 @@ sources/3 = SubResource("TileSetAtlasSource_tft66")
 
 [node name="Node2D" type="Node2D" unique_id=355733884]
 scale = Vector2(3, 3)
+script = ExtResource("1_cxtv7")
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_0bt86")]
 position = Vector2(0, 24)
@@ -143,6 +145,9 @@ level_number = 4
 
 [node name="Sprite0" parent="LevelTombstone4" index="0" unique_id=215085513]
 texture = ExtResource("13_nmsip")
+
+[node name="LevelTombstone0" type="Node2D" parent="." unique_id=524989867]
+position = Vector2(-233.33334, 24)
 
 [editable path="LevelTombstone1"]
 [editable path="LevelTombstone2"]

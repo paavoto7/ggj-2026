@@ -6,4 +6,5 @@ func _on_start_game_pressed():
 
 func _on_quit_game_pressed():
     print("Quitting game")
+    get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
     get_tree().quit()
