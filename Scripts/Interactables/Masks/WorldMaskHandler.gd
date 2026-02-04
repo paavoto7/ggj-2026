@@ -1,4 +1,4 @@
-class_name WorldMask extends Area2D
+class_name WorldMask extends Interactable
 
 @export var max_val: float = .25
 @export var min_val: float = -.25
@@ -8,10 +8,6 @@ class_name WorldMask extends Area2D
 
 @onready var mask_item: MaskItem = $MaskItem as MaskItem
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:  
-    add_to_group("interactables")
-    pass # Replace with function body.
 
 var elapsed_time: float = 0
 func _physics_process(delta: float) -> void:

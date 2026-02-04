@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_55vll"]
 size = Vector2(35, 37)
 
-[node name="Tombstone" type="Area2D" unique_id=1221145921]
+[node name="Tombstone" type="Area2D" unique_id=784205846]
 script = ExtResource("1_ob35o")
 
 [node name="Sprite0" type="Sprite2D" parent="." unique_id=215085513]
