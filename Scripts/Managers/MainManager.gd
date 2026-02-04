@@ -32,4 +32,7 @@ func _load_game_data() -> void:
     if ResourceLoader.exists(save_data_path):
         current_game_data = ResourceLoader.load(save_data_path, "GameData")
     else:
-        current_game_data = GameData.new()
+        _reset_game_data()
+
+func _reset_game_data() -> void:
+    current_game_data = GameData.new()
