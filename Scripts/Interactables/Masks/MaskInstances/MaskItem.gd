@@ -1,5 +1,7 @@
 class_name MaskItem extends Node
 
+var mask_id: String
+
 var callables: Array[Callable] = []
 
 func get_callables() -> Array[Callable]:

@@ -1,5 +1,9 @@
 class_name ForestMask extends MaskItem
 
+func _ready() -> void:
+    super._ready()
+    mask_id = "forest_mask"
+
 const time_scale_factor: int =  2
 
 func set_static_effects():
