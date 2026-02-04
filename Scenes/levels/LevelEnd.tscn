@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://we3lggno66n1"]
+
+[ext_resource type="Script" uid="uid://bjrv5d3ulpq1r" path="res://Scripts/Levels/LevelEnd.gd" id="1_ktjf8"]
+[ext_resource type="Texture2D" uid="uid://boxh1uado50fw" path="res://Assets/Images/props/tombstone.png" id="2_qn2m2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oocy4"]
+size = Vector2(59, 57)
+
+[node name="LevelEnd" type="Area2D" unique_id=719450829]
+script = ExtResource("1_ktjf8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1088242677]
+position = Vector2(0.5, -9.5)
+shape = SubResource("RectangleShape2D_oocy4")
+
+[node name="Tombstone" type="Sprite2D" parent="." unique_id=1576401348]
+texture = ExtResource("2_qn2m2")

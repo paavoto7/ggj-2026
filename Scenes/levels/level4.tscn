@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c1sfknc52bgiq" path="res://Assets/Images/lvl4_parallax/sprite_2.png" id="10_vqu04"]
 [ext_resource type="Texture2D" uid="uid://cufy8o5dckyba" path="res://Assets/Images/lvl4_parallax/sprite_3.png" id="11_ktrwh"]
 [ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="12_ryc53"]
+[ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="13_vqu04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7m84"]
 texture = ExtResource("2_ofi80")
@@ -200,3 +201,6 @@ texture = ExtResource("11_ktrwh")
 
 [node name="WorldFloor" parent="." unique_id=898512442 instance=ExtResource("12_ryc53")]
 position = Vector2(625, -390)
+
+[node name="LevelEnd" parent="." unique_id=719450829 instance=ExtResource("13_vqu04")]
+position = Vector2(6773.3335, -59.666668)

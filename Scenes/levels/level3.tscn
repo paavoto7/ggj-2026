@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_73dj2"]
 [ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_df4gu"]
 [ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="7_9dkee"]
+[ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="8_a4sp7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df4gu"]
 texture = ExtResource("2_5vxev")
@@ -436,6 +437,9 @@ autoplay = &"move8"
 
 [node name="StaticBody2D" parent="." unique_id=898512442 instance=ExtResource("7_9dkee")]
 position = Vector2(0, -281.33337)
+
+[node name="LevelEnd" parent="." unique_id=719450829 instance=ExtResource("8_a4sp7")]
+position = Vector2(7067.667, 43.333332)
 
 [editable path="AnimatableBody2D"]
 [editable path="AnimatableBody2D2"]
