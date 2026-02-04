@@ -6,7 +6,7 @@ extends Area2D
 
 @export var pos_offset: Vector2 = Vector2(0, -100)
 
-var interactables_in_range: Array = []
+var interactables_in_range: Array[Interactable] = []
 
 
 func _ready() -> void:
@@ -31,7 +31,10 @@ func _update_interaction_prompt() -> void:
     if !interactables_in_range.is_empty():
         var interactable: Area2D = interactables_in_range[_get_closest_interactable()]
         # Sets the pos to screen space location plus the specified offset
-        hud.toggle_interaction_prompt(true, interactable.get_screen_transform().origin + pos_offset)
+        if interactable.prompt_position == Vector2.ZERO:
+            interactable.prompt_position = interactable.get_screen_transform().origin
+
+        hud.toggle_interaction_prompt(true, interactable.prompt_text, interactable.prompt_position + pos_offset)
     else:
         hud.toggle_interaction_prompt(false)
 

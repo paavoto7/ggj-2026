@@ -1,4 +1,4 @@
-class_name Tombstone extends Node
+class_name Tombstone extends Interactable
 
 # Just some sound
 @export var mask_pickup_sound: AudioStream = preload("res://Assets/Audio/MaskPickUpS.wav")
@@ -13,11 +13,6 @@ enum LevelNumber {
 
 # Set in editor based on the level we want to load
 @export var level_number: LevelNumber = LevelNumber.Hub
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:  
-    # Could be added in editor as well
-    add_to_group("interactables")
 
 
 func interact(_player: Player) -> void:
