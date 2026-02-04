@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="6_y05r8"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_pjwhy"]
 [ext_resource type="Texture2D" uid="uid://cc5dondwlt0u6" path="res://Assets/Images/props/jääpiikkejä Borikselle.png" id="8_sjedw"]
+[ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="10_wqqg4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t033"]
 texture = ExtResource("2_w7nad")
@@ -300,3 +301,6 @@ region_rect = Rect2(0, 16, 48, 16)
 
 [node name="WorldFloor" parent="." unique_id=898512442 instance=ExtResource("6_eloyq")]
 position = Vector2(792.3333, -269)
+
+[node name="LevelEnd" parent="." unique_id=719450829 instance=ExtResource("10_wqqg4")]
+position = Vector2(6742.0796, -132.91745)

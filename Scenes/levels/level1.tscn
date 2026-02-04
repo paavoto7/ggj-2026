@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://doh6ubjjo2qkm" path="res://Assets/Images/lvl1_parallax/sprite_1.png" id="10_wrykp"]
 [ext_resource type="Texture2D" uid="uid://wf7ernugc5jg" path="res://Assets/Images/lvl1_parallax/sprite_3.png" id="11_qnnww"]
 [ext_resource type="Texture2D" uid="uid://b4ivmrv6qb5rq" path="res://Assets/Images/lvl1_parallax/sprite_4.png" id="12_4hiyj"]
+[ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="16_oxu8x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skpnj"]
 texture = ExtResource("1_rahoo")
@@ -355,5 +356,8 @@ texture = ExtResource("12_4hiyj")
 
 [node name="WorldFloor" parent="." unique_id=898512442 instance=ExtResource("10_qptf1")]
 position = Vector2(473.6667, -36.333313)
+
+[node name="LevelEnd" parent="." unique_id=719450829 instance=ExtResource("16_oxu8x")]
+position = Vector2(6169.6665, 12)
 
 [editable path="Mask"]
