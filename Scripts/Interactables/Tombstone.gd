@@ -22,6 +22,8 @@ func interact(_player: Player) -> void:
     if level_number == LevelNumber.Hub:
         scene_to_load = "res://Scenes/levels/hub.tscn"
     
+    MainManager.current_game_data.last_hub_tombstone = "LevelTombstone%d" % level_number
+    
     get_tree().change_scene_to_file(scene_to_load)
 
     
