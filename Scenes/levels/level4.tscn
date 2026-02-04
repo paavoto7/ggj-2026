@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c56ig3a360lxs" path="res://Assets/Images/Tilemap/tileset_sand.png" id="2_ofi80"]
 [ext_resource type="Texture2D" uid="uid://diioqk2q73www" path="res://Assets/Images/Tilemap/hiekka.png" id="3_5rtj3"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_ia2ng"]
-[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_5rtj3"]
+[ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="5_8ls1f"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_mrlvs"]
+[ext_resource type="Texture2D" uid="uid://hmdu4x3bpbvi" path="res://Assets/Images/Masks/H3Rotating.png" id="6_hlubj"]
 [ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_n7m84"]
+[ext_resource type="Script" uid="uid://ymxaj0ps2nld" path="res://Scripts/Interactables/Masks/MaskInstances/DesertMask.gd" id="7_8ls1f"]
 [ext_resource type="Texture2D" uid="uid://csokba0te30dg" path="res://Assets/Images/lvl4_parallax/sprite_0.png" id="8_r4q1w"]
 [ext_resource type="Texture2D" uid="uid://dkx6lyjmw1hk5" path="res://Assets/Images/lvl4_parallax/sprite_1.png" id="9_ryc53"]
 [ext_resource type="Texture2D" uid="uid://c1sfknc52bgiq" path="res://Assets/Images/lvl4_parallax/sprite_2.png" id="10_vqu04"]
@@ -75,6 +77,73 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n7m84")
 sources/1 = SubResource("TileSetAtlasSource_mrlvs")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xgtr"]
+size = Vector2(48, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnhy0"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbak5"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i68bh"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4117"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho8lw"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usqmt"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evovp"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenvk"]
+atlas = ExtResource("6_hlubj")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_njlqc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnhy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbak5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i68bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4117")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ho8lw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usqmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evovp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nenvk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
 [sub_resource type="Animation" id="Animation_ia2ng"]
 length = 0.001
 tracks/0/type = "value"
@@ -117,6 +186,7 @@ _data = {
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_ofi80")]
+position = Vector2(600.3334, -27.333334)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 position_smoothing_enabled = true
@@ -129,8 +199,21 @@ tile_set = SubResource("TileSet_hh7mx")
 position = Vector2(473.3333, -68.666664)
 CHASE_SPEED = 300.0
 
-[node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_5rtj3")]
+[node name="Mask" type="Area2D" parent="." unique_id=2051030919 groups=["interactables"]]
 position = Vector2(684.6667, -49.333332)
+script = ExtResource("5_8ls1f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask" unique_id=10988267]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_2xgtr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=1728194619]
+sprite_frames = SubResource("SpriteFrames_njlqc")
+autoplay = "default"
+frame_progress = 0.44408777
+
+[node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
+script = ExtResource("7_8ls1f")
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_mrlvs")]
 position = Vector2(128.66667, -26)

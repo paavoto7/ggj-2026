@@ -1,5 +1,9 @@
 class_name IceMask extends MaskItem
 
+func _ready() -> void:
+    super._ready()
+    mask_id = "ice_mask"
+
 var playerHealth: CharacterHealth
 var oldMaxHealth: int
 

@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bykxo2lthnfm6" path="res://Scenes/player.tscn" id="1_5vxev"]
 [ext_resource type="Texture2D" uid="uid://k06huy0bc0jf" path="res://Assets/Images/Tilemap/tileset_uuscave.png" id="2_5vxev"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="3_v6amx"]
-[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_a4sp7"]
+[ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="4_3t033"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="5_73dj2"]
+[ext_resource type="Texture2D" uid="uid://bl3npmkp7nqri" path="res://Assets/Images/Masks/H4Rotating.png" id="5_inq6p"]
+[ext_resource type="Script" uid="uid://carhd241h1ewd" path="res://Scripts/Interactables/Masks/MaskInstances/LavaMask.gd" id="6_3t033"]
 [ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_df4gu"]
 [ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="7_9dkee"]
 [ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="8_a4sp7"]
@@ -89,6 +91,73 @@ texture = ExtResource("2_5vxev")
 [sub_resource type="TileSet" id="TileSet_hh7mx"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_df4gu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xgtr"]
+size = Vector2(48, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcesw"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfc72"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_posmm"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1e6mf"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4qth"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctiwq"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_du4s5"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq456"]
+atlas = ExtResource("5_inq6p")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_352e5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcesw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfc72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_posmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1e6mf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4qth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctiwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_du4s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sq456")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="Animation" id="Animation_v6amx"]
 length = 7.0
@@ -356,8 +425,20 @@ tile_set = SubResource("TileSet_hh7mx")
 position = Vector2(42.333008, -102.33333)
 CHASE_SPEED = 300.0
 
-[node name="Mask" parent="." unique_id=2051030919 groups=["interactables"] instance=ExtResource("4_a4sp7")]
+[node name="Mask" type="Area2D" parent="." unique_id=2051030919 groups=["interactables"]]
 position = Vector2(4360.3335, -200.33334)
+script = ExtResource("4_3t033")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mask" unique_id=10988267]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_2xgtr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mask" unique_id=1728194619]
+sprite_frames = SubResource("SpriteFrames_352e5")
+autoplay = "default"
+
+[node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
+script = ExtResource("6_3t033")
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_73dj2")]
 position = Vector2(38.333344, -37.33333)
