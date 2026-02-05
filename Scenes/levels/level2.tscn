@@ -10,6 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_pjwhy"]
 [ext_resource type="Texture2D" uid="uid://cc5dondwlt0u6" path="res://Assets/Images/props/jääpiikkejä Borikselle.png" id="8_sjedw"]
 [ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="10_wqqg4"]
+[ext_resource type="Texture2D" uid="uid://4clm125neb6r" path="res://Assets/Images/lvl2_parallax/sprite_0.png" id="11_pjwhy"]
+[ext_resource type="Texture2D" uid="uid://chmudf1d4ty3a" path="res://Assets/Images/lvl2_parallax/sprite_1.png" id="12_pudda"]
+[ext_resource type="Texture2D" uid="uid://dtdnqyjusddwm" path="res://Assets/Images/lvl2_parallax/sprite_2.png" id="13_muxm6"]
+[ext_resource type="Texture2D" uid="uid://vdh24o42gru8" path="res://Assets/Images/lvl2_parallax/sprite_3.png" id="14_26deu"]
+[ext_resource type="Texture2D" uid="uid://bpn7fanb2neoa" path="res://Assets/Images/lvl2_parallax/sprite_4.png" id="15_rb227"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t033"]
 texture = ExtResource("2_w7nad")
@@ -304,3 +309,62 @@ position = Vector2(792.3333, -269)
 
 [node name="LevelEnd" parent="." unique_id=719450829 instance=ExtResource("10_wqqg4")]
 position = Vector2(6742.0796, -132.91745)
+
+[node name="Background" type="Node" parent="." unique_id=1894416190]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=2070638779]
+scroll_scale = Vector2(0.1, 0)
+scroll_offset = Vector2(0, -167)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(10, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D" unique_id=1076599063]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("11_pjwhy")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=483681525]
+scroll_scale = Vector2(0.4, 0)
+scroll_offset = Vector2(0, -167)
+repeat_size = Vector2(14000, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=985326965]
+z_index = -1
+position = Vector2(6411, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("12_pudda")
+
+[node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=1147402132]
+scroll_scale = Vector2(0.8, 0)
+scroll_offset = Vector2(0, -167)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=719246229]
+z_index = -1
+position = Vector2(6411, 160)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("13_muxm6")
+
+[node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=921542869]
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -164)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1697235767]
+z_index = -1
+position = Vector2(6419, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("14_26deu")
+
+[node name="Parallax2D5" type="Parallax2D" parent="Background" unique_id=1882616492]
+scroll_scale = Vector2(1, 0)
+scroll_offset = Vector2(0, -164)
+repeat_size = Vector2(14000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5" unique_id=2064103274]
+z_index = -1
+position = Vector2(6419, 160.00002)
+scale = Vector2(14.245, 14.337)
+texture = ExtResource("15_rb227")
