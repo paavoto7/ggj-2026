@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="6_eloyq"]
 [ext_resource type="Script" uid="uid://djcol27seykuo" path="res://Scripts/Interactables/Masks/MaskInstances/IceMask.gd" id="6_oocy4"]
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="6_y05r8"]
+[ext_resource type="PackedScene" uid="uid://cb02aad2jqxj3" path="res://Scenes/Common/HoverEffect.tscn" id="7_pudda"]
 [ext_resource type="PackedScene" uid="uid://ba1cuqhqrk4u7" path="res://Scenes/Enemies/pingpongenemy.tscn" id="8_pjwhy"]
 [ext_resource type="Texture2D" uid="uid://cc5dondwlt0u6" path="res://Assets/Images/props/jääpiikkejä Borikselle.png" id="8_sjedw"]
 [ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="10_wqqg4"]
@@ -195,6 +196,8 @@ autoplay = "default"
 
 [node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
 script = ExtResource("6_oocy4")
+
+[node name="HoverEffect" parent="Mask" unique_id=1226166822 instance=ExtResource("7_pudda")]
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("8_pjwhy")]
 position = Vector2(101.33333, 13.999999)

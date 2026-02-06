@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://hmdu4x3bpbvi" path="res://Assets/Images/Masks/H3Rotating.png" id="6_hlubj"]
 [ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_n7m84"]
 [ext_resource type="Script" uid="uid://ymxaj0ps2nld" path="res://Scripts/Interactables/Masks/MaskInstances/DesertMask.gd" id="7_8ls1f"]
+[ext_resource type="PackedScene" uid="uid://cb02aad2jqxj3" path="res://Scenes/Common/HoverEffect.tscn" id="8_hlubj"]
 [ext_resource type="Texture2D" uid="uid://csokba0te30dg" path="res://Assets/Images/lvl4_parallax/sprite_0.png" id="8_r4q1w"]
 [ext_resource type="Texture2D" uid="uid://dkx6lyjmw1hk5" path="res://Assets/Images/lvl4_parallax/sprite_1.png" id="9_ryc53"]
 [ext_resource type="Texture2D" uid="uid://c1sfknc52bgiq" path="res://Assets/Images/lvl4_parallax/sprite_2.png" id="10_vqu04"]
@@ -213,6 +214,8 @@ frame_progress = 0.44408777
 
 [node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
 script = ExtResource("7_8ls1f")
+
+[node name="HoverEffect" parent="Mask" unique_id=1226166822 instance=ExtResource("8_hlubj")]
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_mrlvs")]
 position = Vector2(128.66667, -26)

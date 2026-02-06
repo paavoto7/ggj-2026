@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d3vfjjkhm7aru" path="res://Scripts/Interactables/Masks/WorldMaskHandler.gd" id="1_8k863"]
 [ext_resource type="Texture2D" uid="uid://c3jve3shpup6l" path="res://Assets/Images/Masks/H2Rotating.png" id="3_2xgtr"]
 [ext_resource type="Script" uid="uid://r121cu5ff1vp" path="res://Scripts/Interactables/Masks/MaskInstances/GreenMask.gd" id="3_aqswj"]
+[ext_resource type="PackedScene" uid="uid://cb02aad2jqxj3" path="res://Scenes/Common/HoverEffect.tscn" id="4_aqswj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2xgtr"]
 size = Vector2(48, 46)
@@ -141,3 +142,5 @@ frame_progress = 0.08896689
 
 [node name="MaskItem" type="Node" parent="." unique_id=443979748]
 script = ExtResource("3_aqswj")
+
+[node name="HoverEffect" parent="." unique_id=1226166822 instance=ExtResource("4_aqswj")]
