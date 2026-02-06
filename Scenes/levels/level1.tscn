@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dte0r1vuepygt" path="res://Scenes/Enemies/ghost.tscn" id="2_hh7mx"]
 [ext_resource type="Texture2D" uid="uid://bka6txcv4jauo" path="res://Assets/Images/Tilemap/Forest/multaa_Taas.png" id="3_52e1d"]
 [ext_resource type="Texture2D" uid="uid://djn8jysp2kray" path="res://Assets/Images/Tilemap/Forest/Keskikohat_uus_emt.png" id="4_o4am0"]
-[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/mask_green.tscn" id="4_udnv3"]
+[ext_resource type="PackedScene" uid="uid://c43bp25pqtll1" path="res://Scenes/Interactables/Masks/WorldMask.tscn" id="4_udnv3"]
 [ext_resource type="Texture2D" uid="uid://b574wq5buqxya" path="res://Assets/Images/Tilemap/Forest/Jos_nyt_ne_mullat....png" id="5_oyuyp"]
 [ext_resource type="Texture2D" uid="uid://b256rao3fely5" path="res://Assets/Images/Tilemap/Forest/tileset_multa2.png" id="6_qptf1"]
 [ext_resource type="Script" uid="uid://bdhg0itcvodfh" path="res://Scripts/Interactables/Masks/MaskInstances/ForestMask.gd" id="8_jfump"]

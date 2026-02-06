@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://carhd241h1ewd" path="res://Scripts/Interactables/Masks/MaskInstances/LavaMask.gd" id="6_3t033"]
 [ext_resource type="PackedScene" uid="uid://ck44a2ioh005x" path="res://Scenes/moving_platform.tscn" id="6_df4gu"]
 [ext_resource type="PackedScene" uid="uid://cg10u58t3h7x0" path="res://Scenes/world_floor.tscn" id="7_9dkee"]
+[ext_resource type="PackedScene" uid="uid://cb02aad2jqxj3" path="res://Scenes/Common/HoverEffect.tscn" id="7_wfc72"]
 [ext_resource type="PackedScene" uid="uid://we3lggno66n1" path="res://Scenes/levels/LevelEnd.tscn" id="8_a4sp7"]
 [ext_resource type="Texture2D" uid="uid://di8jh38pi8iiv" path="res://Assets/Images/lvl3_parallax/sprite_0.png" id="11_pcesw"]
 [ext_resource type="Texture2D" uid="uid://byeyoyoyp1fiu" path="res://Assets/Images/lvl3_parallax/sprite_1.png" id="12_wfc72"]
@@ -483,6 +484,8 @@ autoplay = "default"
 
 [node name="MaskItem" type="Node" parent="Mask" unique_id=443979748]
 script = ExtResource("6_3t033")
+
+[node name="HoverEffect" parent="Mask" unique_id=1226166822 instance=ExtResource("7_wfc72")]
 
 [node name="PingPongEnemy" parent="." unique_id=385219625 instance=ExtResource("5_73dj2")]
 position = Vector2(38.333344, -37.33333)
