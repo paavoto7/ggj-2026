@@ -8,6 +8,7 @@ extends Node2D
 @export var fall_speed := 0.0
 @export var GRAVITY := 1200.0
 @export var MAX_FALL_SPEED := 2000.0
+@export var fall_threshold: float = 1.0
 
 @export var damage: int = 25
 
@@ -59,7 +60,7 @@ func _on_trigger_entered(body):
 
 
 func _start_fall_delay():
-    await get_tree().create_timer(1.0).timeout
+    await get_tree().create_timer(fall_threshold).timeout
     falling = true
     damage_area.monitoring = true  # NOW it can deal damage
 
