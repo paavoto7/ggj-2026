@@ -212,8 +212,8 @@ position = Vector2(95.198, 0)
 position = Vector2(-59.497, 0)
 
 [node name="JääpiikkejäBorikselle" type="Sprite2D" parent="." unique_id=57751071]
-position = Vector2(1195.1666, 129.16667)
-scale = Vector2(1.3125, 2.895833)
+position = Vector2(1195, 129.33334)
+scale = Vector2(1.333, 2.94)
 texture = ExtResource("8_sjedw")
 region_enabled = true
 region_rect = Rect2(0, 0, 48, 16)
@@ -317,7 +317,7 @@ position = Vector2(6742.0796, -132.91745)
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=2070638779]
 scroll_scale = Vector2(0.1, 0)
-scroll_offset = Vector2(0, -167)
+scroll_offset = Vector2(0, -111)
 repeat_size = Vector2(14000, 0)
 autoscroll = Vector2(10, 0)
 
@@ -329,9 +329,8 @@ texture = ExtResource("11_pjwhy")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=483681525]
 scroll_scale = Vector2(0.4, 0)
-scroll_offset = Vector2(0, -167)
+scroll_offset = Vector2(0, -111)
 repeat_size = Vector2(14000, 0)
-autoscroll = Vector2(50, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=985326965]
 z_index = -1
@@ -341,7 +340,7 @@ texture = ExtResource("12_pudda")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=1147402132]
 scroll_scale = Vector2(0.8, 0)
-scroll_offset = Vector2(0, -167)
+scroll_offset = Vector2(0, -111)
 repeat_size = Vector2(14000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=719246229]
@@ -352,7 +351,7 @@ texture = ExtResource("13_muxm6")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=921542869]
 scroll_scale = Vector2(1, 0)
-scroll_offset = Vector2(0, -164)
+scroll_offset = Vector2(0, -100)
 repeat_size = Vector2(14000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=1697235767]
@@ -363,7 +362,7 @@ texture = ExtResource("14_26deu")
 
 [node name="Parallax2D5" type="Parallax2D" parent="Background" unique_id=1882616492]
 scroll_scale = Vector2(1, 0)
-scroll_offset = Vector2(0, -164)
+scroll_offset = Vector2(0, 412)
 repeat_size = Vector2(14000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D5" unique_id=2064103274]

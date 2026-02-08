@@ -586,9 +586,8 @@ texture = ExtResource("11_pcesw")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=1096396293]
 scroll_scale = Vector2(0.4, 0)
-scroll_offset = Vector2(0, -259)
+scroll_offset = Vector2(0, 461)
 repeat_size = Vector2(14000, 0)
-autoscroll = Vector2(50, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D2" unique_id=1097791903]
 z_index = -1

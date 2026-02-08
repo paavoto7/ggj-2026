@@ -240,7 +240,7 @@ autoplay = &"move"
 
 [node name="Parallax2D" type="Parallax2D" parent="Background" unique_id=830175549]
 scroll_scale = Vector2(0.1, 0)
-scroll_offset = Vector2(0, -659)
+scroll_offset = Vector2(0, -355)
 repeat_size = Vector2(14000, 0)
 autoscroll = Vector2(10, 0)
 
@@ -252,7 +252,7 @@ texture = ExtResource("8_r4q1w")
 
 [node name="Parallax2D2" type="Parallax2D" parent="Background" unique_id=48734908]
 scroll_scale = Vector2(0.4, 0)
-scroll_offset = Vector2(0, -659)
+scroll_offset = Vector2(0, -355)
 repeat_size = Vector2(14000, 0)
 autoscroll = Vector2(50, 0)
 
@@ -264,7 +264,7 @@ texture = ExtResource("9_ryc53")
 
 [node name="Parallax2D3" type="Parallax2D" parent="Background" unique_id=2092224130]
 scroll_scale = Vector2(0.8, 0)
-scroll_offset = Vector2(0, -659)
+scroll_offset = Vector2(0, -267)
 repeat_size = Vector2(14000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D3" unique_id=1497668395]
@@ -275,7 +275,7 @@ texture = ExtResource("10_vqu04")
 
 [node name="Parallax2D4" type="Parallax2D" parent="Background" unique_id=1891376211]
 scroll_scale = Vector2(1, 0)
-scroll_offset = Vector2(0, -656)
+scroll_offset = Vector2(0, -352)
 repeat_size = Vector2(14000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Background/Parallax2D4" unique_id=998996991]
