@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cj01uf7ygev7i"]
+
+[ext_resource type="Script" uid="uid://wnh8t4lnb4r4" path="res://Scripts/Levels/LevelElements/DamageBoundary.gd" id="1_nvvc6"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_358tm"]
+a = Vector2(-34.666687, -2.3333359)
+b = Vector2(47, -2.666669)
+
+[node name="DamageBoundary" type="Area2D" unique_id=77606876]
+script = ExtResource("1_nvvc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1155736207]
+shape = SubResource("SegmentShape2D_358tm")
