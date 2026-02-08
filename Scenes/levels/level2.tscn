@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dtdnqyjusddwm" path="res://Assets/Images/lvl2_parallax/sprite_2.png" id="13_muxm6"]
 [ext_resource type="Texture2D" uid="uid://vdh24o42gru8" path="res://Assets/Images/lvl2_parallax/sprite_3.png" id="14_26deu"]
 [ext_resource type="Texture2D" uid="uid://bpn7fanb2neoa" path="res://Assets/Images/lvl2_parallax/sprite_4.png" id="15_rb227"]
+[ext_resource type="PackedScene" uid="uid://b1qdb1b35btbc" path="res://Scenes/falling_spike.tscn" id="17_muxm6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t033"]
 texture = ExtResource("2_w7nad")
@@ -371,3 +372,14 @@ z_index = -1
 position = Vector2(6419, 160.00002)
 scale = Vector2(14.245, 14.337)
 texture = ExtResource("15_rb227")
+
+[node name="FallingSpike" parent="." unique_id=1948382646 node_paths=PackedStringArray("sprite") instance=ExtResource("17_muxm6")]
+position = Vector2(5989, -48.666668)
+sprite = NodePath("JääpiikkejäBorikselle15")
+
+[node name="JääpiikkejäBorikselle15" type="Sprite2D" parent="FallingSpike" unique_id=471358298]
+rotation = 3.1415925
+scale = Vector2(4.832165, 4.1666512)
+texture = ExtResource("8_sjedw")
+region_enabled = true
+region_rect = Rect2(0, 16, 48, 16)
