@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://chi5svg85q16y" path="res://Assets/Images/Player/H4PriestRunLeft.png" id="30_ax3m3"]
 [ext_resource type="Texture2D" uid="uid://spjjgt0ssvsv" path="res://Assets/Images/Player/H5PriestIdleLeft.png" id="31_3vlem"]
 [ext_resource type="Texture2D" uid="uid://bovqu00nicp0g" path="res://Assets/Images/Player/H5PriestIdleRight.png" id="32_8eeqe"]
+[ext_resource type="Texture2D" uid="uid://c43luwtysrh2n" path="res://Assets/Images/Player/H4PriestRunRight.png" id="32_ie7r7"]
 [ext_resource type="Texture2D" uid="uid://c2yekascbupun" path="res://Assets/Images/Player/H5PriestJumpLeft.png" id="33_5x828"]
 [ext_resource type="Texture2D" uid="uid://dwv7re4vnpuop" path="res://Assets/Images/Player/H5PriestJumpRight.png" id="34_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://bd2hphs5vei3t" path="res://Assets/Images/Player/H5PriestRunLeft.png" id="35_e6mvm"]
@@ -414,27 +415,27 @@ atlas = ExtResource("30_ax3m3")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ho16k"]
-atlas = ExtResource("5_wohnl")
+atlas = ExtResource("32_ie7r7")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o712r"]
-atlas = ExtResource("5_wohnl")
+atlas = ExtResource("32_ie7r7")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfnjl"]
-atlas = ExtResource("5_wohnl")
+atlas = ExtResource("32_ie7r7")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxqhi"]
-atlas = ExtResource("5_wohnl")
+atlas = ExtResource("32_ie7r7")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbb78"]
-atlas = ExtResource("5_wohnl")
+atlas = ExtResource("32_ie7r7")
 region = Rect2(0, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7anab"]
-atlas = ExtResource("5_wohnl")
+atlas = ExtResource("32_ie7r7")
 region = Rect2(32, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7v0o"]
@@ -1173,10 +1174,6 @@ z_index = 10
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_6t5aa")
-speed = null
-jump_velocity = null
-coyote_time = null
-jump_buffer_time = null
 
 [node name="HealthNode" type="Node2D" parent="." unique_id=499971245]
 script = ExtResource("3_6t5aa")
@@ -1185,7 +1182,7 @@ hurt_sound = ExtResource("4_nmr2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1225442316]
 sprite_frames = SubResource("SpriteFrames_cvnsp")
-animation = &"m4_jump_left"
+animation = &"m4_walk_right"
 autoplay = "idle_left"
 
 [node name="Modulator" parent="AnimatedSprite2D" unique_id=338887069 instance=ExtResource("40_57lvd")]
@@ -1287,6 +1284,39 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("50_c1k8q")
 theme_override_font_sizes/font_size = 30
 text = "Press E to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpeedrunTimer" type="Panel" parent="HUD/Control" unique_id=1146093064]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -309.0
+offset_right = 100.0
+offset_bottom = -210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e6mvm")
+
+[node name="Label" type="Label" parent="HUD/Control/SpeedrunTimer" unique_id=1971973150]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("50_c1k8q")
+theme_override_font_sizes/font_size = 50
+text = "60"
 horizontal_alignment = 1
 vertical_alignment = 1
 
