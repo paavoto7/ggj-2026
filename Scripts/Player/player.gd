@@ -9,6 +9,7 @@ class_name Player extends CharacterBody2D
 @onready var steps_sound: AudioStreamPlayer2D = $StepSounds
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
+@onready var animation_modulator: AnimationModulator = $AnimatedSprite2D/Modulator as AnimationModulator
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
 
 @onready var inventory: Inventory = $Inventory as Inventory
@@ -31,6 +32,7 @@ var should_update: bool = true
 
 func _ready() -> void:
     health.character_died.connect(_handle_death)
+    health.health_changed.connect(_handle_on_damage)
 
 func _physics_process(delta: float) -> void:
     if Input.is_action_just_pressed("pause_menu"):
@@ -140,3 +142,6 @@ func _handle_death():
     should_update = false
     $CollisionShape2D.set_deferred("disabled", true) # Disables collisions when death menu open
     $GameOver.game_over()
+
+func _handle_on_damage(_health: int) -> void:
+    animation_modulator.start_flashing()

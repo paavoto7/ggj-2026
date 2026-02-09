@@ -31,6 +31,7 @@ func _ready() -> void:
 	state_machine.add_state(attack)
 
 	health.character_died.connect(_handle_death)
+	health.health_changed.connect(_change_state_on_damage)
 
 func _physics_process(delta: float) -> void:
 	state_machine.update(delta)
@@ -54,3 +55,8 @@ func get_animation() -> StringName:
 
 func _handle_death():
 	self.queue_free()
+
+# Attack player when enemy is damaged
+func _change_state_on_damage(_health: int) -> void:
+	state_machine.change_state("AttackState")
+	$AnimatedSprite2D/Modulator.start_flashing()

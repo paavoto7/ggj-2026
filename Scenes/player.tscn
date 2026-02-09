@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dwv7re4vnpuop" path="res://Assets/Images/Player/H5PriestJumpRight.png" id="34_c1k8q"]
 [ext_resource type="Texture2D" uid="uid://bd2hphs5vei3t" path="res://Assets/Images/Player/H5PriestRunLeft.png" id="35_e6mvm"]
 [ext_resource type="Texture2D" uid="uid://bxiwqf1ncbrqu" path="res://Assets/Images/Player/H5PriestRunRight.png" id="36_57lvd"]
+[ext_resource type="PackedScene" uid="uid://bdn1qckr3npxw" path="res://Scenes/Common/modulator.tscn" id="40_57lvd"]
 [ext_resource type="AudioStream" uid="uid://o6ldt51e58au" path="res://Assets/Audio/PriestAttackS.wav" id="42_nmr2m"]
 [ext_resource type="AudioStream" uid="uid://brawkv02hn5tl" path="res://Assets/Audio/RunS.mp3" id="46_ax3m3"]
 [ext_resource type="Script" uid="uid://h435yifkxbm7" path="res://Scripts/Player/HUD.gd" id="47_3vlem"]
@@ -1172,6 +1173,10 @@ z_index = 10
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_6t5aa")
+speed = null
+jump_velocity = null
+coyote_time = null
+jump_buffer_time = null
 
 [node name="HealthNode" type="Node2D" parent="." unique_id=499971245]
 script = ExtResource("3_6t5aa")
@@ -1180,8 +1185,11 @@ hurt_sound = ExtResource("4_nmr2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1225442316]
 sprite_frames = SubResource("SpriteFrames_cvnsp")
-animation = &"idle_right"
+animation = &"m4_jump_left"
 autoplay = "idle_left"
+
+[node name="Modulator" parent="AnimatedSprite2D" unique_id=338887069 instance=ExtResource("40_57lvd")]
+flash_duration = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=699477332]
 position = Vector2(0, 1)
@@ -1195,6 +1203,7 @@ attack_sound = ExtResource("42_nmr2m")
 
 [node name="attack_ray" type="RayCast2D" parent="AttackOrigin" unique_id=1168460107]
 target_position = Vector2(400, 0)
+collision_mask = 4
 
 [node name="Cooldown" type="Timer" parent="AttackOrigin" unique_id=110001427]
 wait_time = 0.8
