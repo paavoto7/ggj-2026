@@ -67,21 +67,22 @@ func _physics_process(delta: float) -> void:
     
     move_and_slide()
 
+var movement_modifier: float = 1.0
 
 func _handle_movement() -> void:
     direction = Input.get_axis("move_left", "move_right")
 
-    velocity.x = direction * speed if direction else move_toward(velocity.x, 0, speed)
+    velocity.x = direction * speed * movement_modifier if direction else move_toward(velocity.x, 0, speed)
     
     if !steps_sound.playing:
         steps_sound.play()
     
     if velocity:
-        if direction * dir_sign < 0:
+        if velocity.x * dir_sign < 0:
             attack_handler.position.x *= -1
             attack_raycast.scale *= -1
         
-        if direction < 0:
+        if velocity.x < 0:
             _play_anim("walk_left")
             dir_sign = Direction.Left
             
