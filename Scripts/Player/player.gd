@@ -112,8 +112,15 @@ func _physics_process(delta: float) -> void:
     
     move_and_slide()
 
+
 func _play_anim(anim_name: StringName) -> void:
-    if !anim_playing:
+    if anim_playing:
+        return
+    
+    if inventory.currentMask:
+        anim_name = inventory.currentMask.mask_anim_id + anim_name
+    
+    if animated_sprite.animation != anim_name:
         animated_sprite.play(anim_name)
         anim_playing = true
 

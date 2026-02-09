@@ -3,6 +3,7 @@ class_name DesertMask extends MaskItem
 func _ready() -> void:
     super._ready()
     mask_id = "desert_mask"
+    mask_anim_id = "m3_"
 
 func set_static_effects():
     print("Set static effects")
