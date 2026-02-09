@@ -138,4 +138,5 @@ func _apply_callables() -> void:
 
 func _handle_death():
     should_update = false
+    $CollisionShape2D.set_deferred("disabled", true) # Disables collisions when death menu open
     $GameOver.game_over()
