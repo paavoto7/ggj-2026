@@ -74,10 +74,10 @@ func _handle_movement() -> void:
 
     velocity.x = direction * speed * movement_modifier if direction else move_toward(velocity.x, 0, speed)
     
-    if !steps_sound.playing:
-        steps_sound.play()
-    
     if velocity:
+        if !steps_sound.playing:
+            steps_sound.play()
+        
         if velocity.x * dir_sign < 0:
             attack_handler.position.x *= -1
             attack_raycast.scale *= -1
