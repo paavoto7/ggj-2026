@@ -1,5 +1,8 @@
 class_name Player extends CharacterBody2D
 
+# Is responsible for most player behaviour
+# Needs to be modularized, if the project is developed further
+
 @export var speed: float = 300
 @export var jump_velocity: float = -460.0
 
@@ -9,7 +12,10 @@ class_name Player extends CharacterBody2D
 @onready var steps_sound: AudioStreamPlayer2D = $StepSounds
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D as AnimatedSprite2D
+@onready var animation_modulator: AnimationModulator = $AnimatedSprite2D/Modulator as AnimationModulator
+
 @onready var attack_handler: PlayerAttack = $AttackOrigin as PlayerAttack
+@onready var attack_raycast: RayCast2D = $AttackOrigin/attack_ray as RayCast2D
 
 @onready var inventory: Inventory = $Inventory as Inventory
 @onready var health: CharacterHealth = $HealthNode as CharacterHealth
@@ -20,7 +26,6 @@ var direction: float = 0
 
 enum Direction { Left = -1, Right = 1 } # Not ideal...
 var dir_sign: Direction = Direction.Right
-var is_shooting: bool = false
 
 var anim_playing: bool = false
 
@@ -31,6 +36,7 @@ var should_update: bool = true
 
 func _ready() -> void:
     health.character_died.connect(_handle_death)
+    health.health_changed.connect(_handle_on_damage)
 
 func _physics_process(delta: float) -> void:
     if Input.is_action_just_pressed("pause_menu"):
@@ -73,6 +79,7 @@ func _handle_movement() -> void:
     if velocity:
         if direction * dir_sign < 0:
             attack_handler.position.x *= -1
+            attack_raycast.scale *= -1
         
         if direction < 0:
             _play_anim("walk_left")
@@ -140,3 +147,6 @@ func _handle_death():
     should_update = false
     $CollisionShape2D.set_deferred("disabled", true) # Disables collisions when death menu open
     $GameOver.game_over()
+
+func _handle_on_damage(_health: int) -> void:
+    animation_modulator.start_flashing()
