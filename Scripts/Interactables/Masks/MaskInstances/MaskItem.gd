@@ -1,6 +1,7 @@
 class_name MaskItem extends Node
 
 var mask_id: String
+var mask_anim_id: String
 
 var callables: Array[Callable] = []
 

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bdn1qckr3npxw"]
+
+[ext_resource type="Script" uid="uid://bg0l32g0jsyah" path="res://Scripts/Common/AnimationModulator.gd" id="1_xsgmq"]
+
+[node name="Modulator" type="Timer" unique_id=338887069]
+script = ExtResource("1_xsgmq")

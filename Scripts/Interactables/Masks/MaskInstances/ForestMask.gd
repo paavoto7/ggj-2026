@@ -3,6 +3,7 @@ class_name ForestMask extends MaskItem
 func _ready() -> void:
     super._ready()
     mask_id = "forest_mask"
+    mask_anim_id = "m2_"
 
 const time_scale_factor: int =  2
 
