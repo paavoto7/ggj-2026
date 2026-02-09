@@ -16,7 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://dtdnqyjusddwm" path="res://Assets/Images/lvl2_parallax/sprite_2.png" id="13_muxm6"]
 [ext_resource type="Texture2D" uid="uid://vdh24o42gru8" path="res://Assets/Images/lvl2_parallax/sprite_3.png" id="14_26deu"]
 [ext_resource type="Texture2D" uid="uid://bpn7fanb2neoa" path="res://Assets/Images/lvl2_parallax/sprite_4.png" id="15_rb227"]
-[ext_resource type="PackedScene" uid="uid://b1qdb1b35btbc" path="res://Scenes/falling_spike.tscn" id="17_muxm6"]
+[ext_resource type="PackedScene" uid="uid://b1qdb1b35btbc" path="res://Scenes/levels/LevelElements/falling_spike.tscn" id="17_muxm6"]
+[ext_resource type="Texture2D" uid="uid://c7t24wch7jtqg" path="res://Assets/Images/props/koriste_luuranko.png" id="18_26deu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3t033"]
 texture = ExtResource("2_w7nad")
@@ -166,7 +167,7 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=259014528]
+[node name="Node2D2" type="Node2D" unique_id=259014528]
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_sjedw")]
@@ -374,6 +375,7 @@ texture = ExtResource("15_rb227")
 
 [node name="FallingSpike" parent="." unique_id=1948382646 node_paths=PackedStringArray("sprite") instance=ExtResource("17_muxm6")]
 position = Vector2(5989, -48.666668)
+fall_threshold = 0.5
 sprite = NodePath("JääpiikkejäBorikselle15")
 
 [node name="JääpiikkejäBorikselle15" type="Sprite2D" parent="FallingSpike" unique_id=471358298]
@@ -382,3 +384,11 @@ scale = Vector2(4.832165, 4.1666512)
 texture = ExtResource("8_sjedw")
 region_enabled = true
 region_rect = Rect2(0, 16, 48, 16)
+
+[node name="FallingSpike2" parent="." unique_id=1397674745 node_paths=PackedStringArray("sprite") instance=ExtResource("17_muxm6")]
+position = Vector2(6048.667, -49.666668)
+sprite = NodePath("KoristeLuuranko")
+
+[node name="KoristeLuuranko" type="Sprite2D" parent="FallingSpike2" unique_id=1926384319]
+scale = Vector2(4.1666512, 4.1666512)
+texture = ExtResource("18_26deu")

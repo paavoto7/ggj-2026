@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b1qdb1b35btbc"]
+
+[ext_resource type="Script" uid="uid://dbr3xjl1r1k2j" path="res://Scripts/FallingSpike.gd" id="1_r3tli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7qr2s"]
+size = Vector2(100, 1202.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ht1w"]
+size = Vector2(200, 100)
+
+[node name="FallingSpike" type="Node2D" unique_id=1948382646]
+scale = Vector2(0.2400009, 0.2400009)
+script = ExtResource("1_r3tli")
+fall_threshold = 0.1
+
+[node name="TriggerArea" type="Area2D" parent="." unique_id=2081223105]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea" unique_id=529253731]
+position = Vector2(0, 554.625)
+shape = SubResource("RectangleShape2D_7qr2s")
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=508419982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=765000833]
+position = Vector2(0, 50.00002)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_6ht1w")
+debug_color = Color(0.9410011, 1.1358858e-05, 0.61471784, 0.41960785)
+
+[node name="Node" type="Node" parent="." unique_id=788356721]
