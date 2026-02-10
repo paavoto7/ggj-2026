@@ -248,7 +248,6 @@ animations = [{
 scale = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1799530315 groups=["player"] instance=ExtResource("1_ofi80")]
-position = Vector2(6443.667, -400.00003)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1479126687]
 position_smoothing_enabled = true

@@ -87,6 +87,7 @@ height = 34.0
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_mselb")
+attack_distance = 50.0
 
 [node name="HealthNode" type="Node2D" parent="." unique_id=2053238891]
 script = ExtResource("5_lsagp")

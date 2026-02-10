@@ -81,15 +81,14 @@ func _handle_movement() -> void:
         if velocity.x < 0:
             _play_anim("walk_left")
             dir_sign = Direction.Left
-            # Will make this to something more robust later
-            attack_handler.position.x = -abs(attack_handler.position.x)
-            attack_raycast.scale.x = -abs(attack_raycast.scale.x)
             
         else:
             _play_anim("walk_right")
             dir_sign = Direction.Right
-            attack_handler.position.x = abs(attack_handler.position.x)
-            attack_raycast.scale.x = abs(attack_raycast.scale.x)
+        
+        if sign(attack_handler.position.x) != dir_sign:
+            attack_handler.position.x *= -1
+            attack_raycast.scale.x *= -1
 
 
 func _handle_jump(delta: float) -> void:

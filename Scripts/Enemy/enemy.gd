@@ -9,7 +9,7 @@ enum State {
 @export var CHASE_SPEED: float = 800.0
 
 @export var damage_amount: int = 25
-@export var attack_distance: float = 200
+@export var attack_distance: float = 75
 @export var attack_speed: float = 2
 
 var state_machine: StateMachine
