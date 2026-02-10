@@ -1,7 +1,7 @@
 class_name DesertMask extends MaskItem
 
 # Time of the speedrun in seconds
-@export var speedrun_time: int = 60
+@export var speedrun_time: int = 300
 
 func _ready() -> void:
     super._ready()

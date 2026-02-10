@@ -80,8 +80,8 @@ radius = 61.0
 height = 122.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mselb"]
-radius = 21.0
-height = 50.0
+radius = 11.0
+height = 34.0
 
 [node name="Ghost" type="CharacterBody2D" unique_id=389897498]
 collision_layer = 4
@@ -93,6 +93,7 @@ script = ExtResource("5_lsagp")
 MAX_HEALTH = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1856874743]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_urtqy")
 animation = &"idle"
 autoplay = "idle"

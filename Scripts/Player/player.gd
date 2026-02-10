@@ -78,17 +78,18 @@ func _handle_movement() -> void:
         if !steps_sound.playing:
             steps_sound.play()
         
-        if velocity.x * dir_sign < 0:
-            attack_handler.position.x *= -1
-            attack_raycast.scale *= -1
-        
         if velocity.x < 0:
             _play_anim("walk_left")
             dir_sign = Direction.Left
+            # Will make this to something more robust later
+            attack_handler.position.x = -abs(attack_handler.position.x)
+            attack_raycast.scale.x = -abs(attack_raycast.scale.x)
             
         else:
             _play_anim("walk_right")
             dir_sign = Direction.Right
+            attack_handler.position.x = abs(attack_handler.position.x)
+            attack_raycast.scale.x = abs(attack_raycast.scale.x)
 
 
 func _handle_jump(delta: float) -> void:
