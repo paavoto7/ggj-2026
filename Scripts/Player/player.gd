@@ -35,119 +35,120 @@ var jump_buffer_timer: float = 0.0
 var should_update: bool = true
 
 func _ready() -> void:
-	health.character_died.connect(_handle_death)
-	health.health_changed.connect(_handle_on_damage)
+    health.character_died.connect(_handle_death)
+    health.health_changed.connect(_handle_on_damage)
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("pause_menu"):
-		$"GameOver".game_over()
-		return
-	
-	if !should_update:
-		return
-		
-	anim_playing = false
+    if Input.is_action_just_pressed("pause_menu"):
+        $"GameOver".game_over()
+        return
+    
+    if !should_update:
+        return
+        
+    anim_playing = false
 
-	# Query for jump and jump if pressed    
-	_handle_jump(delta)
+    # Query for jump and jump if pressed    
+    _handle_jump(delta)
 
-	# Get the input direction and handle the movement/deceleration.
-	_handle_movement()
+    # Get the input direction and handle the movement/deceleration.
+    _handle_movement()
 
-	if is_on_floor() and direction == 0:
-		if dir_sign == Direction.Left:
-			_play_anim("idle_left")
-		else:
-			_play_anim("idle_right")
-	
-	if Input.is_action_just_pressed("attack"):
-		attack_handler.attack(dir_sign)
-	
-	_apply_callables()
-	
-	move_and_slide()
+    if is_on_floor() and direction == 0:
+        if dir_sign == Direction.Left:
+            _play_anim("idle_left")
+        else:
+            _play_anim("idle_right")
+    
+    if Input.is_action_just_pressed("attack"):
+        attack_handler.attack(dir_sign)
+    
+    _apply_callables()
+    
+    move_and_slide()
 
 var movement_modifier: float = 1.0
 
 func _handle_movement() -> void:
-	direction = Input.get_axis("move_left", "move_right")
+    direction = Input.get_axis("move_left", "move_right")
 
-	velocity.x = direction * speed * movement_modifier if direction else move_toward(velocity.x, 0, speed)
-	
-	if !steps_sound.playing:
-		steps_sound.play()
-	
-	if velocity:
-		if velocity.x * dir_sign < 0:
-			attack_handler.position.x *= -1
-			attack_raycast.scale *= -1
-		
-		if velocity.x < 0:
-			_play_anim("walk_left")
-			dir_sign = Direction.Left
-			
-		else:
-			_play_anim("walk_right")
-			dir_sign = Direction.Right
+    velocity.x = direction * speed * movement_modifier if direction else move_toward(velocity.x, 0, speed)
+    
+    if velocity:
+        if !steps_sound.playing:
+            steps_sound.play()
+        
+        if velocity.x < 0:
+            _play_anim("walk_left")
+            dir_sign = Direction.Left
+            # Will make this to something more robust later
+            attack_handler.position.x = -abs(attack_handler.position.x)
+            attack_raycast.scale.x = -abs(attack_raycast.scale.x)
+            
+        else:
+            _play_anim("walk_right")
+            dir_sign = Direction.Right
+            attack_handler.position.x = abs(attack_handler.position.x)
+            attack_raycast.scale.x = abs(attack_raycast.scale.x)
 
 
 func _handle_jump(delta: float) -> void:
-	coyote_timer -= delta
-	jump_buffer_timer -= delta
+    coyote_timer -= delta
+    jump_buffer_timer -= delta
 
-	var on_floor: bool = is_on_floor()
-	
-	# Add the gravity.
-	if not on_floor:
-		velocity += get_gravity() * delta
-	else:
-		coyote_timer = coyote_time
+    var on_floor: bool = is_on_floor()
+    
+    # Add the gravity.
+    if not on_floor:
+        velocity += get_gravity() * delta
+    else:
+        coyote_timer = coyote_time
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump"):
-		jump_buffer_timer = jump_buffer_time
+    # Handle jump.
+    if Input.is_action_just_pressed("jump"):
+        jump_buffer_timer = jump_buffer_time
 
-		if on_floor:
-			_jump()
-			
-		elif jump_buffer_timer > 0 and coyote_timer > 0:
-			jump_buffer_timer = 0
-			coyote_timer = 0
-			_jump()
+        if on_floor:
+            _jump()
+            
+        elif jump_buffer_timer > 0 and coyote_timer > 0:
+            jump_buffer_timer = 0
+            coyote_timer = 0
+            _jump()
 
 
 # Do the actual jump
 func _jump() -> void:
-	velocity.y = jump_velocity
-	if direction < 0:
-		_play_anim("jump_left")
-	else:
-		_play_anim("jump_right")
-	jump_timer.start()
+    velocity.y = jump_velocity
+    if direction < 0:
+        _play_anim("jump_left")
+    else:
+        _play_anim("jump_right")
+    jump_timer.start()
 
 
 func _play_anim(anim_name: StringName) -> void:
-	if anim_playing:
-		return
-	
-	if inventory.currentMask:
-		anim_name = inventory.currentMask.mask_anim_id + anim_name
-	
-	if animated_sprite.animation != anim_name:
-		animated_sprite.play(anim_name)
-		anim_playing = true
+    if anim_playing:
+        return
+    
+    if inventory.currentMask:
+        anim_name = inventory.currentMask.mask_anim_id + anim_name
+    
+    if animated_sprite.animation != anim_name:
+        animated_sprite.play(anim_name)
+        anim_playing = true
 
 func _apply_callables() -> void:
-	if not inventory.currentMask:
-		return
+    if not inventory.currentMask:
+        return
 
-	for callable in inventory.currentMask.get_callables():
-		callable.call(self)
+    for callable in inventory.currentMask.get_callables():
+        callable.call(self)
 
 func _handle_death():
-	should_update = false
-	$CollisionShape2D.set_deferred("disabled", true) # Disables collisions when death menu open
-	$GameOver.game_over()
+    should_update = false
+    $CollisionShape2D.set_deferred("disabled", true) # Disables collisions when death menu open
+    $GameOver.game_over()
 
 func _handle_on_damage(_health: int) -> void:
-	animation_modulator.start_flashing()
+    animation_modulator.start_flashing()
